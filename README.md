@@ -1,6 +1,6 @@
 # WebClient-Kelompok2
 
-## Proyek UTS: Company Profile - NexusDigi Agency
+## Proyek UTS: Web Portofolio Interaktif - DevFolio
 Repositori ini digunakan untuk memenuhi tugas proyek UTS dan UAS mata kuliah **Web Client Development (WCD04)** - Program Studi Sains Data, Universitas Cakrawala.
 
 ### 👥 Anggota Kelompok
@@ -12,7 +12,7 @@ Repositori ini digunakan untuk memenuhi tugas proyek UTS dan UAS mata kuliah **W
 6. GHINA ATHAYA TYANO - 25120500011
 
 ### 📝 Deskripsi Proyek
-NexusDigi Agency adalah sebuah aplikasi web Company Profile statis/dinamis yang dirancang untuk mempresentasikan layanan agensi transformasi digital. Web ini dibangun dengan fokus pada performa, arsitektur komponen yang bersih, antarmuka UI/UX yang intuitif, serta responsivitas tinggi di berbagai perangkat (Desktop & Mobile).
+DevFolio adalah sebuah platform web portofolio interaktif yang dirancang untuk memamerkan karya, keterampilan teknis, dan pengalaman kerja di bidang IT dan Sains Data. Fokus utama proyek ini adalah kejelasan hierarki visual, kenyamanan pengguna (UX), serta responsivitas tata letak yang adaptif di berbagai perangkat.
 
 ### 🛠️ Rencana Teknologi (Tech Stack)
 - **Framework:** React.js
