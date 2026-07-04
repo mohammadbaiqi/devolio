@@ -1,26 +1,32 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
+import { buildPortfolioDetailPath } from "@/lib/portfolio";
 
 const projects = [
   {
     title: "Fintech Dashboard",
+    id: "1",
     category: "Web Application",
     image: "/images/dashboard_mockup_1782570304246.jpg",
     tags: ["React", "TypeScript", "TailwindCSS"],
   },
   {
     title: "FitTrack Pro",
+    id: "2",
     category: "Mobile UI Design",
     image: "/images/mobile_app_mockup_1782570315356.jpg",
     tags: ["React Native", "UI/UX", "Figma"],
   },
   {
     title: "Nexus Digitals",
+    id: "3",
     category: "Corporate Landing",
     image: "/images/corporate_site_mockup_1782570326008.jpg",
     tags: ["Next.js", "Framer Motion", "Shadcn"],
   },
 ];
+
 
 export default function Portofolio() {
   return (
@@ -76,9 +82,9 @@ export default function Portofolio() {
                 </div>
               </div>
               
-              <a href="#" className="inline-flex items-center gap-2 text-sm font-medium text-white/80 hover:text-white transition-colors">
+              <Link to={buildPortfolioDetailPath("raif", project.id)} className="inline-flex items-center gap-2 text-sm font-medium text-white/80 hover:text-white transition-colors">
                 View Case Study <ChevronRight size={16} />
-              </a>
+              </Link>
             </div>
           </motion.div>
         ))}
