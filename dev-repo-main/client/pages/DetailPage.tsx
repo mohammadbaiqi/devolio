@@ -14,6 +14,7 @@ type ProjectDetail = {
   tagline?: string;
   overview?: string;
   info?: ProjectInfo;
+  liveDemoUrl?: string;
   gallery?: string[];
   techStack?: { tech: string; icon: string }[];
   whatIBuilt?: BuildSection[];
@@ -71,7 +72,7 @@ export default function DetailPage() {
      <div className="mb-4 flex items-center justify-between">
 
       <h1 className="mb-4 text-4xl font-semibold md:text-5xl">{project.tagline ?? "Project Detail"}</h1>
-      <a href="#" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-lg bg-amber-400 px-8 py-3 text-sm font-medium text-black transition hover:bg-amber-300" >
+      <a href={project.liveDemoUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-lg bg-amber-400 px-8 py-3 text-sm font-medium text-black transition hover:bg-amber-300" >
             Live Demo
         <ExternalLink size={18} className="h-4 w-4"/>
       </a>
@@ -89,7 +90,7 @@ export default function DetailPage() {
         <img
           src={tech.icon}
           alt={tech.tech}
-          className="h-5 w-5 object-contain white"
+          className="h-5 w-5 text-white"
         />
 
         <span className="text-sm text-white/70">
