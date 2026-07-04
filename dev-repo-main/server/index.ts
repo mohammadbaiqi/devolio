@@ -24,11 +24,12 @@ export function createServer() {
       try {
         const { name } = req.params
         const data = await loadDataJson(name);
-
         res.json(data.overview);
       } catch (error) {
-        res.status(404).json({
-          message: "Portfolio not found"
+        console.error(error);
+
+        res.status(500).json({
+          message: error instanceof Error ? error.message : String(error)
         });
       }
     }
