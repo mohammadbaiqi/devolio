@@ -157,7 +157,7 @@
             "1": {
                 "heroImage": "/images/projects/ecommerce-platform-hero.jpg",
                 "tagline": "Full-stack online shopping experience",
-                "liveDemoUrl": "https://demo.example.com/ecommerce",
+                "liveDemoUrl": "https://shopee.co.id/",
                 "overview": "A modern e-commerce platform built for seamless shopping experience. Designed and developed end-to-end with focus on conversion rate optimization, mobile-first layout, and fast page performance. Integrated with Midtrans payment gateway for Indonesian market.",
                 "info": {
                     "year": "2023 — 2024",
@@ -166,18 +166,39 @@
                     "duration": "6 months"
                 },
                 "techStack": [
-                    "React.js",
-                    "React.js",
-                    "React.js",
-                    "Golang",
-                    "Postgresql"
+                    {
+                    "tech": "TypeScript",
+                    "icon": "/images/icon/typescript.svg"
+                    },
+                    {
+                    "tech": "React",
+                    "icon": "/images/icon/react.svg"
+                    },
+                    {
+                    "tech": "Golang",
+                    "icon": "/images/icon/golang.svg"
+                    },
+                    {
+                    "tech": "Postgresql",
+                    "icon": "/images/icon/postgresql.svg"
+                    }
                 ],
-                "gallery": [
-                    "/images/projects/ecommerce-platform-1.jpg",
-                    "/images/projects/ecommerce-platform-2.jpg",
-                    "/images/projects/ecommerce-platform-3.jpg",
-                    "/images/projects/ecommerce-platform-4.jpg"
-                ]
+            "whatIBuilt": [
+                {
+                    "title": "Backend",
+                    "points": [
+                        {
+                            "description": "Designed and built the core REST API (Go) handling product catalog, cart, orders, and authentication."
+                        },
+                        {
+                            "description": "Designed the PostgreSQL schema for products, orders, and inventory, including an inventory ledger to prevent overselling under concurrent checkouts."
+                        },
+                        {
+                            "description": "Integrated Midtrans as the payment gateway, including idempotent webhook handling for asynchronous payment confirmation."
+                        }
+                    ]
+                }
+            ]
             },
             "2": {
                 "heroImage": "/images/projects/photography-portfolio-hero.jpg",

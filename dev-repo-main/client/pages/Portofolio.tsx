@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import { MotionNavLink } from "@/components/navigation";
 import { ROUTES } from "@/config/navigation";
+import { buildPortfolioDetailPath } from "@/lib/portfolio";
 
 const projects = [
   {
@@ -82,7 +83,7 @@ export default function Portofolio() {
                 to={ROUTES.contact}
                 className="inline-flex items-center gap-2 text-sm font-medium text-white/80 hover:text-white transition-colors"
               >
-                Discuss Project <ChevronRight size={16} />
+                View Case Study <ChevronRight size={16} />
               </MotionNavLink>
             </div>
           </motion.div>
