@@ -1,0 +1,376 @@
+{
+    "overview": {
+        "header": {
+            "title": "Hi, I'm Mohammad Raifandi Baiqi",
+            "subTitle": "Software Engineer | Backend Developer | AI Enthusiast",
+            "mainImage": "https://example.com/images/profile.png"
+        },
+        "aboutMe": {
+            "headerTitle": "About Me",
+            "subHeaderTitle": "Passionate software engineer with experience in building scalable backend systems, modern web applications, and AI-powered solutions.",
+            "skills": [
+                "TypeScript",
+                "Node.js",
+                "Express.js",
+                "NestJS",
+                "React",
+                "Next.js",
+                "PostgreSQL",
+                "Redis",
+                "Docker",
+                "AWS"
+            ],
+            "projectCount": 24,
+            "experience": "3+ Years"
+        },
+        "workExperience": [
+            {
+                "id": 1,
+                "company": "Gojek Indonesia",
+                "position": "Software Engineer",
+                "period": "Jan 2023 - Present"
+            },
+            {
+                "id": 2,
+                "company": "Freelance",
+                "position": "Full Stack Developer",
+                "period": "2021 - 2022"
+            }
+        ],
+        "portfolio": [
+            {
+                "id": 1,
+                "title": "E-commerce Platform",
+                "image": "/images/projects/ecommerce-platform.jpg",
+                "tags": [
+                    "Web",
+                    "React"
+                ]
+            },
+            {
+                "id": 2,
+                "title": "Photography Portfolio",
+                "image": "/images/projects/photography-portfolio.jpg",
+                "tags": [
+                    "Design"
+                ]
+            },
+            {
+                "id": 3,
+                "title": "Mobile App",
+                "image": "/images/projects/mobile-app.jpg",
+                "tags": [
+                    "Mobile"
+                ]
+            }
+        ],
+        "contact": {
+            "headerTitle": "Let's Work Together",
+            "subHeaderTitle": "Feel free to contact me for collaboration or opportunities.",
+            "email": "raifandi@example.com",
+            "phone": "+62 812-3456-7890",
+            "location": "Bandung, Indonesia",
+            "linkedin": "https://linkedin.com/in/raifandi",
+            "github": "https://github.com/raifandi"
+        }
+    },
+    "portofolio": {
+        "profile": {
+            "bio": "A passionate developer with a knack for creating visually appealing and functional websites. Dedicated to delivering high-quality and innovative solutions."
+        },
+        "projects": [
+            {
+                "id": 1,
+                "title": "E-commerce Platform",
+                "image": "/images/projects/ecommerce-platform.jpg",
+                "tags": [
+                    "Web",
+                    "React"
+                ]
+            },
+            {
+                "id": 2,
+                "title": "Photography Portfolio",
+                "image": "/images/projects/photography-portfolio.jpg",
+                "tags": [
+                    "Design"
+                ]
+            },
+            {
+                "id": 3,
+                "title": "Mobile App",
+                "image": "/images/projects/mobile-app.jpg",
+                "tags": [
+                    "Mobile"
+                ]
+            },
+            {
+                "id": 4,
+                "title": "Brand Identity",
+                "image": "/images/projects/brand-identity.jpg",
+                "tags": [
+                    "Branding"
+                ]
+            },
+            {
+                "id": 5,
+                "title": "Social Media Campaign",
+                "image": "/images/projects/social-media-campaign.jpg",
+                "tags": [
+                    "Marketing"
+                ]
+            },
+            {
+                "id": 6,
+                "title": "Corporate Website",
+                "image": "/images/projects/corporate-website.jpg",
+                "tags": [
+                    "Web"
+                ]
+            },
+            {
+                "id": 7,
+                "title": "Interactive Game",
+                "image": "/images/projects/interactive-game.jpg",
+                "tags": [
+                    "Game Dev"
+                ]
+            },
+            {
+                "id": 8,
+                "title": "Blog Platform",
+                "image": "/images/projects/blog-platform.jpg",
+                "tags": [
+                    "Web"
+                ]
+            },
+            {
+                "id": 9,
+                "title": "Virtual Reality Experience",
+                "image": "/images/projects/virtual-reality-experience.jpg",
+                "tags": [
+                    "VR"
+                ]
+            }
+        ],
+        "projectDetails": {
+            "1": {
+                "heroImage": "/images/projects/ecommerce-platform-hero.jpg",
+                "tagline": "Full-stack online shopping experience",
+                "liveDemoUrl": "https://demo.example.com/ecommerce",
+                "overview": "A modern e-commerce platform built for seamless shopping experience. Designed and developed end-to-end with focus on conversion rate optimization, mobile-first layout, and fast page performance. Integrated with Midtrans payment gateway for Indonesian market.",
+                "info": {
+                    "year": "2023 — 2024",
+                    "team": "2 people",
+                    "role": "Lead Designer & Dev",
+                    "duration": "6 months"
+                },
+                "techStack": [
+                    "React.js",
+                    "React.js",
+                    "React.js",
+                    "Golang",
+                    "Postgresql"
+                ],
+                "gallery": [
+                    "/images/projects/ecommerce-platform-1.jpg",
+                    "/images/projects/ecommerce-platform-2.jpg",
+                    "/images/projects/ecommerce-platform-3.jpg",
+                    "/images/projects/ecommerce-platform-4.jpg"
+                ]
+            },
+            "2": {
+                "heroImage": "/images/projects/photography-portfolio-hero.jpg",
+                "tagline": "Minimalist gallery for a professional photographer",
+                "liveDemoUrl": "https://demo.example.com/photography-portfolio",
+                "overview": "A clean, image-first portfolio site designed to let the photographer's work speak for itself. Built with a masonry grid layout, lazy-loaded images, and smooth lightbox transitions to keep load times fast without sacrificing visual impact.",
+                "info": {
+                    "year": "2023",
+                    "team": "1 person",
+                    "role": "Designer & Developer",
+                    "duration": "1 month"
+                },
+                "techStack": [
+                    "Next.js",
+                    "Tailwind CSS",
+                    "Cloudinary"
+                ],
+                "gallery": [
+                    "/images/projects/photography-portfolio-1.jpg",
+                    "/images/projects/photography-portfolio-2.jpg",
+                    "/images/projects/photography-portfolio-3.jpg"
+                ]
+            },
+            "3": {
+                "heroImage": "/images/projects/mobile-app-hero.jpg",
+                "tagline": "Cross-platform habit tracker for daily productivity",
+                "liveDemoUrl": "https://demo.example.com/mobile-app",
+                "overview": "A mobile app that helps users build and track daily habits with streaks, reminders, and progress charts. Built cross-platform to ship on iOS and Android from a single codebase, with offline-first data syncing.",
+                "info": {
+                    "year": "2022 — 2023",
+                    "team": "3 people",
+                    "role": "Frontend Developer",
+                    "duration": "4 months"
+                },
+                "techStack": [
+                    "React Native",
+                    "TypeScript",
+                    "Firebase"
+                ],
+                "gallery": [
+                    "/images/projects/mobile-app-1.jpg",
+                    "/images/projects/mobile-app-2.jpg",
+                    "/images/projects/mobile-app-3.jpg",
+                    "/images/projects/mobile-app-4.jpg"
+                ]
+            },
+            "4": {
+                "heroImage": "/images/projects/brand-identity-hero.jpg",
+                "tagline": "Full brand identity for a boutique coffee roastery",
+                "liveDemoUrl": null,
+                "overview": "Developed a complete brand identity including logo, color palette, packaging design, and brand guidelines for a local coffee roastery. Focused on a warm, artisanal feel that reflects the handcrafted nature of the product.",
+                "info": {
+                    "year": "2022",
+                    "team": "1 person",
+                    "role": "Brand Designer",
+                    "duration": "2 months"
+                },
+                "techStack": [
+                    "Figma",
+                    "Illustrator",
+                    "Photoshop"
+                ],
+                "gallery": [
+                    "/images/projects/brand-identity-1.jpg",
+                    "/images/projects/brand-identity-2.jpg",
+                    "/images/projects/brand-identity-3.jpg"
+                ]
+            }
+        }
+    },
+    "about": {
+        "whyHireMe": {
+            "image": "/images/about/why-hire-me.jpg",
+            "title": "Why Hire me?",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis luctus nunc, posuere in justo vulputate, bibendum sodales.",
+            "stats": [
+                {
+                    "value": "450+",
+                    "label": "Project Completed"
+                },
+                {
+                    "value": "450+",
+                    "label": "Project Completed"
+                }
+            ],
+            "ctaLabel": "Hire me",
+            "ctaLink": "#contact"
+        },
+        "portfolioPreview": {
+            "heading": "Lets have a look at my Portfolio",
+            "seeAllLabel": "See All",
+            "seeAllLink": "/portfolio",
+            "featuredProjectIds": [
+                1,
+                2,
+                3
+            ],
+            "filterTags": [
+                "Landing Page",
+                "Product Design",
+                "Animation",
+                "Glassmorphism",
+                "Cards"
+            ],
+            "highlightedProject": {
+                "id": 1,
+                "title": "E-commerce Platform",
+                "link": "https://example.com/lirante",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue interdum liguta a dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis orci elementum egestas lobortis."
+            }
+        },
+        "cta": {
+            "heading": "Have an Awsome Project Idea? Let's Discuss",
+            "emailPlaceholder": "Enter Email Address",
+            "submitLabel": "Send",
+            "trustBadges": [
+                {
+                    "icon": "star",
+                    "text": "4.9/5 Average Rating"
+                },
+                {
+                    "icon": "trophy",
+                    "text": "20+ Winning Awards"
+                },
+                {
+                    "icon": "badge-check",
+                    "text": "Certified Product Designer"
+                }
+            ]
+        }
+    },
+    "footer": {
+        "cta": {
+            "heading": "Lets Connect there",
+            "buttonLabel": "Hire me",
+            "buttonLink": "#contact"
+        },
+        "brand": {
+            "logo": "DevFolio",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue interdum ligula a dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis orci elementum egestas lobortis.",
+            "socials": [
+                {
+                    "platform": "facebook",
+                    "url": "https://facebook.com/devfolio"
+                },
+                {
+                    "platform": "youtube",
+                    "url": "https://youtube.com/devfolio"
+                },
+                {
+                    "platform": "whatsapp",
+                    "url": "https://wa.me/917738443636"
+                },
+                {
+                    "platform": "instagram",
+                    "url": "https://instagram.com/devfolio"
+                },
+                {
+                    "platform": "twitter",
+                    "url": "https://twitter.com/devfolio"
+                }
+            ]
+        },
+        "navigation": {
+            "heading": "Navigation",
+            "links": [
+                {
+                    "label": "Home",
+                    "url": "/"
+                },
+                {
+                    "label": "About Us",
+                    "url": "/about"
+                },
+                {
+                    "label": "Service",
+                    "url": "/service"
+                },
+                {
+                    "label": "Resume",
+                    "url": "/resume"
+                },
+                {
+                    "label": "Project",
+                    "url": "/project"
+                }
+            ]
+        },
+        "contact": {
+            "heading": "Contact",
+            "phone": "+91 7738443636",
+            "email": "Jaycrea36@gmail.com",
+            "website": "Portfolio-jcrea.com"
+        }
+    }
+}
