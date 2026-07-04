@@ -1,5 +1,12 @@
 import { motion } from "framer-motion";
 import { Mail, Phone, Github, Linkedin } from "lucide-react";
+import {
+  CONTACT_EMAIL,
+  CONTACT_EMAIL_HREF,
+  CONTACT_PHONE,
+  CONTACT_PHONE_HREF,
+  SOCIAL_LINKS,
+} from "@/config/navigation";
 
 export default function Contact() {
   return (
@@ -23,7 +30,7 @@ export default function Contact() {
             </p>
             
             <a
-              href="mailto:hello@example.com"
+              href={CONTACT_EMAIL_HREF}
               className="inline-flex items-center gap-3 w-fit px-8 py-4 rounded-full bg-white text-black font-medium text-lg hover:scale-105 transition-transform"
             >
               Start a conversation
@@ -35,10 +42,10 @@ export default function Contact() {
             <div className="flex flex-col gap-6">
               <span className="text-white/50 text-sm font-medium uppercase tracking-wider">Socials</span>
               <div className="flex flex-col gap-4">
-                <a href="#" className="flex items-center gap-3 text-white/80 hover:text-white transition-colors">
+                <a href={SOCIAL_LINKS[0].href} target="_blank" rel="noreferrer" className="flex items-center gap-3 text-white/80 hover:text-white transition-colors">
                   <Github size={20} /> GitHub
                 </a>
-                <a href="#" className="flex items-center gap-3 text-white/80 hover:text-white transition-colors">
+                <a href={SOCIAL_LINKS[1].href} target="_blank" rel="noreferrer" className="flex items-center gap-3 text-white/80 hover:text-white transition-colors">
                   <Linkedin size={20} /> LinkedIn
                 </a>
               </div>
@@ -47,11 +54,11 @@ export default function Contact() {
             <div className="flex flex-col gap-6">
               <span className="text-white/50 text-sm font-medium uppercase tracking-wider">Contact</span>
               <div className="flex flex-col gap-4">
-                <a href="mailto:hello@example.com" className="flex items-center gap-3 text-white/80 hover:text-white transition-colors">
-                  <Mail size={20} /> hello@example.com
+                <a href={CONTACT_EMAIL_HREF} className="flex items-center gap-3 text-white/80 hover:text-white transition-colors">
+                  <Mail size={20} /> {CONTACT_EMAIL}
                 </a>
-                <a href="#" className="flex items-center gap-3 text-white/80 hover:text-white transition-colors">
-                  <Phone size={20} /> +1 (555) 000-0000
+                <a href={CONTACT_PHONE_HREF} className="flex items-center gap-3 text-white/80 hover:text-white transition-colors">
+                  <Phone size={20} /> {CONTACT_PHONE}
                 </a>
               </div>
             </div>

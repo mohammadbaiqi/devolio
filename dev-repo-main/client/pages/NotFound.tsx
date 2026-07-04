@@ -1,5 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { NavLink } from "@/components/navigation";
+import { ROUTES } from "@/config/navigation";
 
 const NotFound = () => {
   const location = useLocation();
@@ -18,9 +20,9 @@ const NotFound = () => {
         </h1>
 
         <p className="text-xl text-gray-600 mb-4">Oops! Page not found</p>
-        <a href="/" className="text-blue-500 hover:text-blue-700 underline">
+        <NavLink to={ROUTES.home} className="text-blue-500 hover:text-blue-700 underline">
           Return to Home
-        </a>
+        </NavLink>
       </div>
     </div>
   );

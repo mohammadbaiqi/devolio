@@ -3,6 +3,8 @@ import { Outlet } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import { MotionNavLink } from "@/components/navigation";
+import { NAV_LINKS, ROUTES } from "@/config/navigation";
 
 export default function MainContent() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -37,19 +39,29 @@ export default function MainContent() {
             exit={{ opacity: 0, y: -20 }}
             className="fixed inset-0 z-40 bg-[#0A0A0A]/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8"
           >
-            {["Home", "About", "Experience", "Portfolio", "Contact"].map((link, i) => (
-              <motion.a
+            {NAV_LINKS.map((link, i) => (
+              <MotionNavLink
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
-                key={link}
-                href={link === "Home" ? "/" : `/${link.toLowerCase().replace(" ", "-")}`}
+                key={link.label}
+                to={link.to}
                 className="text-3xl font-shantell font-medium text-white hover:text-purple-400 transition-colors"
                 onClick={() => setMenuOpen(false)}
               >
-                {link}
-              </motion.a>
+                {link.label}
+              </MotionNavLink>
             ))}
+            <MotionNavLink
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: NAV_LINKS.length * 0.1 }}
+              to={ROUTES.contact}
+              className="mt-4 inline-flex items-center justify-center rounded-full border border-white/10 bg-white/10 px-6 py-3 text-lg font-medium text-white hover:bg-white/20 transition-colors"
+              onClick={() => setMenuOpen(false)}
+            >
+              Contact
+            </MotionNavLink>
           </motion.div>
         )}
       </AnimatePresence>

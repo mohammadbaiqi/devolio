@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Code2, Monitor, Database, TerminalSquare, User, Briefcase, ChevronRight } from "lucide-react";
+import { MotionNavLink } from "@/components/navigation";
+import { ROUTES } from "@/config/navigation";
 
 const projects = [
   {
@@ -96,19 +98,19 @@ export default function Index() {
             </motion.p>
 
             <motion.div variants={fadeIn} className="flex flex-col sm:flex-row items-center gap-4 mt-8">
-              <a
-                href="#portfolio"
+              <MotionNavLink
+                to={ROUTES.portfolio}
                 className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-black font-medium text-base hover:scale-105 transition-transform"
               >
                 View My Work
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-              </a>
-              <a
-                href="#contact"
+              </MotionNavLink>
+              <MotionNavLink
+                to={ROUTES.contact}
                 className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-medium text-base hover:bg-white/10 transition-colors backdrop-blur-sm"
               >
                 Contact Me
-              </a>
+              </MotionNavLink>
             </motion.div>
           </motion.div>
 
@@ -297,16 +299,16 @@ export default function Index() {
                 A collection of my recent projects focusing on seamless user experiences and modern aesthetics.
               </p>
             </motion.div>
-            <motion.a
+            <MotionNavLink
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              href="/portfolio"
+              to={ROUTES.portfolio}
               className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 font-medium group"
             >
               View all projects
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-            </motion.a>
+            </MotionNavLink>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -348,9 +350,12 @@ export default function Index() {
                     </div>
                   </div>
 
-                  <a href="#" className="inline-flex items-center gap-2 text-sm font-medium text-white/80 hover:text-white transition-colors">
-                    View Case Study <ChevronRight size={16} />
-                  </a>
+                  <MotionNavLink
+                    to={ROUTES.contact}
+                    className="inline-flex items-center gap-2 text-sm font-medium text-white/80 hover:text-white transition-colors"
+                  >
+                    Discuss Project <ChevronRight size={16} />
+                  </MotionNavLink>
                 </div>
               </motion.div>
             ))}
