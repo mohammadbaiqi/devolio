@@ -5,6 +5,7 @@ import { useState } from "react";
 export default function Contact() {
 
   const [agreed, setAgreed] = useState(false);
+  const [countryCode, setCountryCode] = useState("+62");
 
   return (
     <div className="relative z-10 max-w-[1344px] mx-auto px-6 md:px-12 py-12 md:py-24">
@@ -55,20 +56,31 @@ export default function Contact() {
                   <div className="mt-2.5">
                     <div className="flex rounded-md bg-white outline-1 -outline-offset-1 outline-gray-300 has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-indigo-600">
                       <div className="grid shrink-0 grid-cols-1 focus-within:relative">
-                        <select id="country" name="country" aria-label="Country" className="col-start-1 row-start-1 w-full appearance-none rounded-md py-2 pr-7 pl-3.5 text-base text-gray-500 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
-                          <option>US</option>
-                          <option>IDN</option>
-                          <option>CA</option>
-                          <option>EU</option>
-                          <option>UK</option>
-                          <option>AU</option>
-                          <option>IN</option>
+                        <select
+                          id="country"
+                          value={countryCode}
+                          onChange={(e) => setCountryCode(e.target.value)}
+                          className="col-start-1 row-start-1 w-full appearance-none rounded-md py-2 pr-7 pl-3.5 text-base text-gray-700 focus:outline-2 focus:outline-indigo-600 sm:text-sm/6"
+                        >
+                          <option value="+62">🇮🇩  (+62)</option>
+                          <option value="+1">🇺🇸 (+1)</option>
+                          <option value="+44">🇬🇧 (+44)</option>
+                          <option value="+61">🇦🇺 (+61)</option>
+                          <option value="+91">🇮🇳 (+91)</option>
+                          <option value="+65">🇸🇬 (+65)</option>
+                          <option value="+60">🇲🇾 (+60)</option>
                         </select>
                         <svg viewBox="0 0 16 16" fill="currentColor" data-slot="icon" aria-hidden="true" className="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4">
                           <path d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
                         </svg>
                       </div>
-                      <input id="phone-number" type="text" name="phone-number" placeholder="123-456-7890" className="block min-w-0 grow py-1.5 pr-3 pl-1 text-base text-black placeholder:text-gray-400 focus:outline-none sm:text-sm/6" />
+                      <input
+                        id="phone-number"
+                        type="tel"
+                        name="phone-number"
+                        placeholder={`${countryCode} 81234567890`}
+                        className="block min-w-0 grow py-1.5 pr-3 pl-1 text-base text-black placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
+                      />
                     </div>
                   </div>
                 </div>
