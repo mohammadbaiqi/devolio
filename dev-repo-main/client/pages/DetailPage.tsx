@@ -69,9 +69,9 @@ export default function DetailPage() {
         <img src={project.heroImage} alt={project.tagline} className="mb-8 h-[320px] w-full rounded-3xl object-cover" />
       ) : null}
 
-     <div className="mb-4 flex items-center justify-between">
+     <div className="mb-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
 
-      <h1 className="mb-4 text-4xl font-semibold md:text-5xl">{project.tagline ?? "Project Detail"}</h1>
+      <h1 className="text-4xl font-semibold md:text-5xl">{project.tagline ?? "Project Detail"}</h1>
       <a href={project.liveDemoUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-lg bg-amber-400 px-8 py-3 text-sm font-medium text-black transition hover:bg-amber-300" >
             Live Demo
         <ExternalLink size={18} className="h-4 w-4"/>
@@ -85,13 +85,11 @@ export default function DetailPage() {
           {project.techStack?.map((tech) => (
             <div
         key={tech.tech}
-        className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2"
-      >
+        className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2">
         <img
           src={tech.icon}
           alt={tech.tech}
-          className="h-5 w-5 text-white"
-        />
+          className="h-5 w-5 brightness-0 invert"/>
 
         <span className="text-sm text-white/70">
           {tech.tech}
