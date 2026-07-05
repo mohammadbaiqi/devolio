@@ -1,7 +1,11 @@
 import { motion } from "framer-motion";
 import { Mail, Phone, Github, Linkedin } from "lucide-react";
+import { useState } from "react";
 
 export default function Contact() {
+
+  const [agreed, setAgreed] = useState(false);
+
   return (
     <div className="relative z-10 max-w-[1344px] mx-auto px-6 md:px-12 py-12 md:py-24">
       <motion.div
@@ -12,46 +16,46 @@ export default function Contact() {
         {/* Background glow */}
         <div className="absolute top-0 right-0 w-[50%] h-[100%] bg-purple-600/10 blur-[100px] rounded-full pointer-events-none" />
 
-        <div className="flex flex-row gap-16 justify-beetween">
-          <div className="isolate bg-transparent px-6 py-24 sm:py-32 lg:px-8">
-            
-            
+        <div className="flex flex-col lg:flex-row items-start gap-16">
+          <div className="w-full lg:w-1/2">
+
+
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="text-4xl font-semibold tracking-tight text-balance text-[#FFB000] sm:text-5xl">Get in Touch</h2>
-              <p className="mt-2 text-lg/8 text-white-600">Aute magna irure deserunt veniam aliqua magna enim voluptate.</p>
+              <p className="mt-2 text-lg/8 text-gray-300">Aute magna irure deserunt veniam aliqua magna enim voluptate.</p>
             </div>
             <form action="#" method="POST" className="mx-auto mt-16 max-w-xl sm:mt-20">
               <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                 <div>
-                  <label  className="block text-sm/6 font-semibold text-[#FFB000]">First name</label>
+                  <label className="block text-sm/6 font-semibold text-[#FFB000]">First name</label>
                   <div className="mt-2.5">
-                    <input id="first-name" type="text" name="first-name"  className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-black outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600" />
+                    <input id="first-name" type="text" name="first-name" className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-black outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600" />
                   </div>
                 </div>
                 <div>
                   <label className="block text-sm/6 font-semibold text-[#FFB000]">Last name</label>
                   <div className="mt-2.5">
-                    <input id="last-name" type="text" name="last-name"  className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-black outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600" />
+                    <input id="last-name" type="text" name="last-name" className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-black outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600" />
                   </div>
                 </div>
                 <div className="sm:col-span-2">
-                  <label  className="block text-sm/6 font-semibold text-[#FFB000]">Company</label>
+                  <label className="block text-sm/6 font-semibold text-[#FFB000]">Company</label>
                   <div className="mt-2.5">
-                    <input id="company" type="text" name="company"  className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-black outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600" />
+                    <input id="company" type="text" name="company" className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-black outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600" />
                   </div>
                 </div>
                 <div className="sm:col-span-2">
-                  <label  className="block text-sm/6 font-semibold text-[#FFB000]">Email</label>
+                  <label className="block text-sm/6 font-semibold text-[#FFB000]">Email</label>
                   <div className="mt-2.5">
-                    <input id="email" type="email" name="email"  className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-black outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600" />
+                    <input id="email" type="email" name="email" className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-black outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600" />
                   </div>
                 </div>
                 <div className="sm:col-span-2">
-                  <label  className="block text-sm/6 font-semibold text-[#FFB000]">Phone number</label>
+                  <label className="block text-sm/6 font-semibold text-[#FFB000]">Phone number</label>
                   <div className="mt-2.5">
                     <div className="flex rounded-md bg-white outline-1 -outline-offset-1 outline-gray-300 has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-indigo-600">
                       <div className="grid shrink-0 grid-cols-1 focus-within:relative">
-                        <select id="country" name="country"  aria-label="Country" className="col-start-1 row-start-1 w-full appearance-none rounded-md py-2 pr-7 pl-3.5 text-base text-gray-500 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+                        <select id="country" name="country" aria-label="Country" className="col-start-1 row-start-1 w-full appearance-none rounded-md py-2 pr-7 pl-3.5 text-base text-gray-500 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
                           <option>US</option>
                           <option>IDN</option>
                           <option>CA</option>
@@ -69,19 +73,26 @@ export default function Contact() {
                   </div>
                 </div>
                 <div className="sm:col-span-2">
-                  <label  className="block text-sm/6 font-semibold text-[#FFB000]">Message</label>
+                  <label className="block text-sm/6 font-semibold text-[#FFB000]">Message</label>
                   <div className="mt-2.5">
-                    <textarea id="message" name="message"    className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-black outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"></textarea>
+                    <textarea id="message" name="message" className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-black outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"></textarea>
                   </div>
                 </div>
                 <div className="flex gap-x-4 sm:col-span-2">
                   <div className="flex h-6 items-center">
-                    <div className="group relative inline-flex w-8 shrink-0 rounded-full bg-gray-200 p-px inset-ring inset-ring-gray-900/5 outline-offset-2 outline-indigo-600 transition-colors duration-200 ease-in-out has-checked:bg-indigo-600 has-focus-visible:outline-2">
-                      <span className="size-4 rounded-full bg-white shadow-xs ring-1 ring-gray-900/5 transition-transform duration-200 ease-in-out group-has-checked:translate-x-3.5"></span>
-                      <input id="agree-to-policies" type="checkbox" name="agree-to-policies" aria-label="Agree to policies" className="absolute inset-0 size-full appearance-none focus:outline-hidden" />
-                    </div>
+                    <button
+                      type="button"
+                      onClick={() => setAgreed(!agreed)}
+                      className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${agreed ? "bg-indigo-600" : "bg-gray-300"
+                        }`}
+                    >
+                      <span
+                        className={`inline-block h-5 w-5 transform rounded-full bg-white transition-transform ${agreed ? "translate-x-5" : "translate-x-1"
+                          }`}
+                      />
+                    </button>
                   </div>
-                  <label  className="text-sm/6 text-gray-600">
+                  <label className="text-sm/6 text-gray-600">
                     By selecting this, you agree to our
                     <a href="#" className="font-semibold whitespace-nowrap text-indigo-600">privacy policy</a>.
                   </label>
@@ -93,14 +104,13 @@ export default function Contact() {
             </form>
           </div>
 
-          <div className=" max-w-xl">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d3966.2978393532476!2d106.807807!3d-6.2244037!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1sen!2sid!4v1783227241858!5m2!1sen!2sid" 
-            width="600" 
-            height="450" 
-            style={{ border: 0 }} 
-            allowFullScreen 
-            loading="lazy" 
-            referrerPolicy="strict-origin-when-cross-origin">
+          <div className=" max-w-xl self-start">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d3966.2978393532476!2d106.807807!3d-6.2244037!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1sen!2sid!4v1783227241858!5m2!1sen!2sid"
+              className="w-[600px] h-[450px] rounded-xl"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin">
 
             </iframe>
           </div>
