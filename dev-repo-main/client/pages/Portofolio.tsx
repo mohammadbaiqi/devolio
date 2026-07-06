@@ -4,32 +4,32 @@ import { MotionNavLink } from "@/components/navigation";
 import { buildPortfolioDetailPath } from "@/lib/portfolio";
 import { usePortfolio } from "@/context/PortfolioContext";
 
-const projects = [
-  {
-    id: "1",
-    title: "Fintech Dashboard",
-    category: "Web Application",
-    image: "/images/dashboard_mockup_1782570304246.jpg",
-    tags: ["React", "TypeScript", "TailwindCSS"],
-  },
-  {
-    id: "2",
-    title: "FitTrack Pro",
-    category: "Mobile UI Design",
-    image: "/images/mobile_app_mockup_1782570315356.jpg",
-    tags: ["React Native", "UI/UX", "Figma"],
-  },
-  {
-    id: "3",
-    title: "Nexus Digitals",
-    category: "Corporate Landing",
-    image: "/images/corporate_site_mockup_1782570326008.jpg",
-    tags: ["Next.js", "Framer Motion", "Shadcn"],
-  },
-];
+import { useEffect, useState } from "react";
 
 export default function Portofolio() {
   const { name } = usePortfolio();
+  const [data, setData] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (!name) return;
+    setLoading(true);
+    fetch(`/api/portofolio/${name}`)
+      .then((res) => res.json())
+      .then((d) => {
+        setData(d);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error(err);
+        setLoading(false);
+      });
+  }, [name]);
+
+  if (loading) return <div className="min-h-screen flex items-center justify-center text-[#FFB000]">Loading...</div>;
+  if (!data) return <div className="min-h-screen flex items-center justify-center">Portfolio not found</div>;
+
+  const { projects, profile } = data;
 
   return (
     <div className="relative z-10 max-w-[1344px] mx-auto px-6 md:px-12 py-12 md:py-24">
@@ -42,12 +42,12 @@ export default function Portofolio() {
           Selected Work
         </h1>
         <p className="text-[#A3A3A3] text-lg max-w-xl">
-          A collection of my recent projects focusing on seamless user experiences and modern aesthetics.
+          {profile?.bio || "A collection of my recent projects focusing on seamless user experiences and modern aesthetics."}
         </p>
       </motion.div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map((project, i) => (
+        {projects.map((project: any, i: number) => (
           <motion.div
             key={i}
             initial={{ opacity: 0, y: 20 }}
@@ -64,7 +64,7 @@ export default function Portofolio() {
               />
               <div className="absolute top-4 right-4 z-20 flex gap-2">
                 <span className="px-3 py-1 rounded-full bg-[#0D0D0D]/70 backdrop-blur-md border border-[#262629] text-xs font-medium">
-                  {project.category}
+                  Project
                 </span>
               </div>
             </div>
@@ -76,7 +76,7 @@ export default function Portofolio() {
                   {project.title}
                 </h3>
                 <div className="flex flex-wrap gap-2 mt-4">
-                  {project.tags.map(tag => (
+                  {project.tags.map((tag: string) => (
                     <span key={tag} className="text-xs text-[#A3A3A3] px-2 py-1 rounded-md bg-[#262629]">
                       {tag}
                     </span>

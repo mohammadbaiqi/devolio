@@ -1,7 +1,19 @@
+import { useState, useEffect } from "react";
+import { usePortfolio } from "@/context/PortfolioContext";
 import { motion } from "framer-motion";
-import { useState } from "react";
 
 export default function Contact() {
+  const { name } = usePortfolio();
+  const [data, setData] = useState<any>(null);
+  
+  useEffect(() => {
+    if (!name) return;
+    fetch(`/api/contact/${name}`)
+      .then((res) => res.json())
+      .then((d) => setData(d))
+      .catch((err) => console.error(err));
+  }, [name]);
+
   const [agreed, setAgreed] = useState(false);
   const [countryCode, setCountryCode] = useState("+62");
 
@@ -82,11 +94,17 @@ export default function Contact() {
           <div className="w-full lg:w-1/2">
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="text-4xl font-semibold tracking-tight text-balance text-[#FFB000] sm:text-5xl">
-                Get in Touch
+                {data?.cta?.heading || "Get in Touch"}
               </h2>
               <p className="mt-2 text-lg leading-8 text-[#A3A3A3]">
-                Let's connect and build something great together. Fill out the form below to get started.
+                {data?.brand?.description || "Let's connect and build something great together. Fill out the form below to get started."}
               </p>
+              {data && data.contact && (
+                <div className="mt-6 text-[#A3A3A3] text-sm font-medium flex flex-col items-center gap-2">
+                  <p>Email: <span className="text-white">{data.contact.email}</span></p>
+                  <p>Phone: <span className="text-white">{data.contact.phone}</span></p>
+                </div>
+              )}
             </div>
             
             {/* Ditambahkan noValidate agar popup bawaan browser tidak muncul */}

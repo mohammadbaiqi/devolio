@@ -3,58 +3,17 @@ import { ArrowRight, Code2, Monitor, Database, TerminalSquare, User, Briefcase, 
 import { MotionNavLink } from "@/components/navigation";
 import { buildPersonRoutes } from "@/config/navigation";
 import { usePortfolio } from "@/context/PortfolioContext";
+import { useEffect, useState } from "react";
 
-const projects = [
-  {
-    title: "Fintech Dashboard",
-    category: "Web Application",
-    image: "/images/dashboard_mockup_1782570304246.jpg",
-    tags: ["React", "TypeScript", "TailwindCSS"],
-  },
-  {
-    title: "FitTrack Pro",
-    category: "Mobile UI Design",
-    image: "/images/mobile_app_mockup_1782570315356.jpg",
-    tags: ["React Native", "UI/UX", "Figma"],
-  },
-  {
-    title: "Nexus Digitals",
-    category: "Corporate Landing",
-    image: "/images/corporate_site_mockup_1782570326008.jpg",
-    tags: ["Next.js", "Framer Motion", "Shadcn"],
-  },
-];
+// Fallback icons map for dynamic skills & experience
+const skillIconMap: Record<string, any> = {
+  "React": <Code2 className="w-6 h-6" />,
+  "TypeScript": <TerminalSquare className="w-6 h-6" />,
+  "Node.js": <Database className="w-6 h-6" />,
+  "UI/UX Design": <Monitor className="w-6 h-6" />,
+};
 
-const experiences = [
-  {
-    company: "Cognizant, Mumbai",
-    period: "Sep 2016 – July 2020",
-    role: "Experience Designer",
-    desc: "Spearheaded user research and designed interactive prototypes. Improved user engagement by 40% through intuitive UI revamps.",
-    icon: <User className="w-5 h-5" />,
-  },
-  {
-    company: "Sugee Pvt limited, Mumbai",
-    period: "Sep 2020 – July 2023",
-    role: "UI/UX Designer",
-    desc: "Led the design system creation from scratch. Collaborated with developers to ensure pixel-perfect implementation of high-fidelity mockups.",
-    icon: <Briefcase className="w-5 h-5" />,
-  },
-  {
-    company: "Cinetstox, Mumbai",
-    period: "Sep 2023 – Present",
-    role: "Lead UX Designer",
-    desc: "Managing a team of 4 designers. Orchestrating the end-to-end user experience for a flagship streaming platform, boosting retention.",
-    icon: <Monitor className="w-5 h-5" />,
-  },
-];
-
-const skills = [
-  { name: "Frontend Development", icon: <Code2 className="w-6 h-6" /> },
-  { name: "Backend Architecture", icon: <Database className="w-6 h-6" /> },
-  { name: "UI/UX Design", icon: <Monitor className="w-6 h-6" /> },
-  { name: "DevOps & Deployment", icon: <TerminalSquare className="w-6 h-6" /> },
-];
+const getSkillIcon = (skill: string) => skillIconMap[skill] || <Code2 className="w-6 h-6" />;
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -72,6 +31,36 @@ const staggerContainer = {
 export default function Index() {
   const { name } = usePortfolio();
   const personRoutes = buildPersonRoutes(name);
+  
+  const [data, setData] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (!name) return;
+    setLoading(true);
+    fetch(`/api/overview/${name}`)
+      .then((res) => res.json())
+      .then((d) => {
+        setData(d);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Failed to load overview data", err);
+        setLoading(false);
+      });
+  }, [name]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center pt-20 text-[#FFB000]">
+        Loading...
+      </div>
+    );
+  }
+
+  if (!data) return <div className="min-h-screen pt-20 text-center">Data not found.</div>;
+
+  const { header, aboutMe, workExperience, portfolio, contact } = data;
 
   return (
     <>
@@ -91,14 +80,14 @@ export default function Index() {
             </motion.div>
 
             <motion.h1 variants={fadeIn} className="font-shantell font-semibold text-5xl sm:text-6xl md:text-7xl lg:text-[90px] leading-[1.1] tracking-tight">
-              Crafting digital <br className="hidden md:block" />
+              {header.title.split(' ').slice(0, 2).join(' ')} <br className="hidden md:block" />
               <span className="bg-gradient-to-r from-[#FFB000] via-[#FFC533] to-[#FFE299] bg-clip-text text-transparent">
-                experiences
-              </span> that matter.
+                {header.title.split(' ').slice(2).join(' ')}
+              </span>
             </motion.h1>
 
             <motion.p variants={fadeIn} className="text-lg md:text-xl text-[#A3A3A3] font-light max-w-2xl leading-relaxed mt-4">
-              I'm a Fullstack Developer & Designer focused on building modern, high-performance web applications with exceptional user interfaces.
+              {header.subTitle}
             </motion.p>
 
             <motion.div variants={fadeIn} className="flex flex-col sm:flex-row items-center gap-4 mt-8">
@@ -129,7 +118,7 @@ export default function Index() {
             <div className="relative rounded-2xl md:rounded-[40px] overflow-hidden border border-[#262629] bg-[#1C1C1E] backdrop-blur-md aspect-[16/9] md:aspect-[21/9] flex items-center justify-center group">
               <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D] to-transparent opacity-80 z-10" />
               <img
-                src="/images/dashboard_mockup_1782570304246.jpg"
+                src={header.mainImage}
                 alt="Hero Showcase"
                 className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-700 group-hover:scale-105 transform"
               />
@@ -180,21 +169,20 @@ export default function Index() {
             >
               <motion.div variants={fadeIn}>
                 <h2 className="font-shantell font-medium text-4xl md:text-5xl lg:text-[56px] leading-tight">
-                  Innovating through <br />
-                  <span className="text-[#A3A3A3]">design and code.</span>
+                  {aboutMe.headerTitle}
                 </h2>
               </motion.div>
               <motion.p variants={fadeIn} className="text-lg text-[#A3A3A3] font-light leading-relaxed">
-                I bridge the gap between aesthetics and functionality. With a strong foundation in both design principles and technical architecture, I build products that are not just beautiful, but robust, accessible, and scalable.
+                {aboutMe.subHeaderTitle}
               </motion.p>
 
               <motion.div variants={fadeIn} className="grid grid-cols-2 gap-4 mt-4">
-                {skills.map((skill, idx) => (
+                {aboutMe.skills.map((skill: string, idx: number) => (
                   <div key={idx} className="flex items-center gap-3 p-4 rounded-2xl bg-[#1C1C1E] border border-[#262629] hover:border-[#4A4A4D] transition-colors">
                     <div className="text-[#FFB000]">
-                      {skill.icon}
+                      {getSkillIcon(skill)}
                     </div>
-                    <span className="font-medium text-sm md:text-base">{skill.name}</span>
+                    <span className="font-medium text-sm md:text-base">{skill}</span>
                   </div>
                 ))}
               </motion.div>
@@ -209,11 +197,11 @@ export default function Index() {
               className="grid grid-cols-2 gap-4 md:gap-6"
             >
               <div className="flex flex-col gap-2 p-8 rounded-3xl bg-[#1C1C1E] border border-[#262629]">
-                <span className="text-5xl font-bold bg-gradient-to-br from-[#FFB000] to-[#FFC533] bg-clip-text text-transparent">8+</span>
-                <span className="text-[#A3A3A3] text-sm font-medium uppercase tracking-wider">Years Exp</span>
+                <span className="text-5xl font-bold bg-gradient-to-br from-[#FFB000] to-[#FFC533] bg-clip-text text-transparent">{aboutMe.experience}</span>
+                <span className="text-[#A3A3A3] text-sm font-medium uppercase tracking-wider">Experience</span>
               </div>
               <div className="flex flex-col gap-2 p-8 rounded-3xl bg-[#1C1C1E] border border-[#262629] mt-8">
-                <span className="text-5xl font-bold bg-gradient-to-br from-[#FFB000] to-[#FFC533] bg-clip-text text-transparent">50+</span>
+                <span className="text-5xl font-bold bg-gradient-to-br from-[#FFB000] to-[#FFC533] bg-clip-text text-transparent">{aboutMe.projectCount}+</span>
                 <span className="text-[#A3A3A3] text-sm font-medium uppercase tracking-wider">Projects</span>
               </div>
               <div className="flex flex-col gap-2 p-8 rounded-3xl bg-[#1C1C1E] border border-[#262629] -mt-8">
@@ -247,7 +235,7 @@ export default function Index() {
             <div className="hidden md:block absolute top-0 bottom-0 left-1/2 w-px bg-[#262629] -translate-x-1/2" />
 
             <div className="flex flex-col gap-12 md:gap-24">
-              {experiences.map((exp, i) => (
+              {workExperience.map((exp: any, i: number) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, y: 20 }}
@@ -260,7 +248,7 @@ export default function Index() {
                   {/* Timeline Node */}
                   <div className="absolute -left-6 md:left-1/2 md:-translate-x-1/2 w-12 h-12 rounded-full bg-[#0D0D0D] border-4 border-[#0A0A0A] flex items-center justify-center z-10 shadow-xl">
                     <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#FFB000] to-[#E69E00] flex items-center justify-center text-[#0D0D0D]">
-                      {exp.icon}
+                      <Briefcase className="w-5 h-5" />
                     </div>
                   </div>
 
@@ -272,12 +260,9 @@ export default function Index() {
                         {exp.period}
                       </span>
                       <h3 className="font-shantell text-2xl md:text-3xl font-semibold">
-                        {exp.role}
+                        {exp.position}
                       </h3>
                       <p className="text-white font-medium mb-3">{exp.company}</p>
-                      <p className="text-[#A3A3A3] text-sm md:text-base leading-relaxed">
-                        {exp.desc}
-                      </p>
                     </div>
                   </div>
                 </motion.div>
@@ -316,7 +301,7 @@ export default function Index() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, i) => (
+            {portfolio.slice(0, 3).map((project: any, i: number) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
@@ -334,7 +319,7 @@ export default function Index() {
                   />
                   <div className="absolute top-4 right-4 z-20 flex gap-2">
                     <span className="px-3 py-1 rounded-full bg-[#0D0D0D]/70 backdrop-blur-md border border-[#262629] text-xs font-medium">
-                      {project.category}
+                      Project
                     </span>
                   </div>
                 </div>
@@ -346,7 +331,7 @@ export default function Index() {
                       {project.title}
                     </h3>
                     <div className="flex flex-wrap gap-2 mt-4">
-                      {project.tags.map(tag => (
+                      {project.tags.map((tag: string) => (
                         <span key={tag} className="text-xs text-[#A3A3A3] px-2 py-1 rounded-md bg-[#262629]">
                           {tag}
                         </span>
@@ -355,10 +340,10 @@ export default function Index() {
                   </div>
 
                   <MotionNavLink
-                    to={personRoutes.contact}
+                    to={personRoutes.portfolio}
                     className="inline-flex items-center gap-2 text-sm font-medium text-[#A3A3A3] hover:text-[#FFB000] transition-colors"
                   >
-                    Discuss Project <ChevronRight size={16} />
+                    View Project <ChevronRight size={16} />
                   </MotionNavLink>
                 </div>
               </motion.div>
