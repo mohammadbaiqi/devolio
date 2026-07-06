@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import { MotionNavLink } from "@/components/navigation";
 import { buildPortfolioDetailPath } from "@/lib/portfolio";
+import { usePortfolio } from "@/context/PortfolioContext";
 
 const projects = [
   {
@@ -28,6 +29,8 @@ const projects = [
 ];
 
 export default function Portofolio() {
+  const { name } = usePortfolio();
+
   return (
     <div className="relative z-10 max-w-[1344px] mx-auto px-6 md:px-12 py-12 md:py-24">
       <motion.div
@@ -82,7 +85,7 @@ export default function Portofolio() {
               </div>
 
               <MotionNavLink
-                to={buildPortfolioDetailPath(project.title, project.id)}
+                to={buildPortfolioDetailPath(name, project.id)}
                 className="inline-flex items-center gap-2 text-sm font-medium text-[#A3A3A3] hover:text-[#FFB000] transition-colors"
               >
                 View Case Study <ChevronRight size={16} />

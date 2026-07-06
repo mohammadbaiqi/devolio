@@ -1,3 +1,3 @@
-export function buildPortfolioDetailPath(name: string, id: string) {
-  return `/portfolio/${name}/${id}`;
+export function buildPortfolioDetailPath(personName: string, id: string | number) {
+  return `/${personName}/portfolio/${id}`;
 }

@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Code2, Monitor, Database, TerminalSquare, User, Briefcase, ChevronRight } from "lucide-react";
 import { MotionNavLink } from "@/components/navigation";
-import { ROUTES } from "@/config/navigation";
+import { buildPersonRoutes } from "@/config/navigation";
+import { usePortfolio } from "@/context/PortfolioContext";
 
 const projects = [
   {
@@ -69,6 +70,9 @@ const staggerContainer = {
 };
 
 export default function Index() {
+  const { name } = usePortfolio();
+  const personRoutes = buildPersonRoutes(name);
+
   return (
     <>
       {/* HERO SECTION */}
@@ -99,14 +103,14 @@ export default function Index() {
 
             <motion.div variants={fadeIn} className="flex flex-col sm:flex-row items-center gap-4 mt-8">
               <MotionNavLink
-                to={ROUTES.portfolio}
+                to={personRoutes.portfolio}
                 className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#FFB000] text-[#0D0D0D] font-semibold text-base hover:bg-[#E69E00] transition-colors"
               >
                 View My Work
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </MotionNavLink>
               <MotionNavLink
-                to={ROUTES.contact}
+                to={personRoutes.contact}
                 className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-[#1C1C1E] border border-[#262629] text-white font-medium text-base hover:bg-[#262629] transition-colors backdrop-blur-sm"
               >
                 Contact Me
@@ -303,7 +307,7 @@ export default function Index() {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              to={ROUTES.portfolio}
+              to={personRoutes.portfolio}
               className="inline-flex items-center gap-2 text-[#FFB000] hover:text-[#FFC533] font-medium group"
             >
               View all projects
@@ -351,7 +355,7 @@ export default function Index() {
                   </div>
 
                   <MotionNavLink
-                    to={ROUTES.contact}
+                    to={personRoutes.contact}
                     className="inline-flex items-center gap-2 text-sm font-medium text-[#A3A3A3] hover:text-[#FFB000] transition-colors"
                   >
                     Discuss Project <ChevronRight size={16} />
