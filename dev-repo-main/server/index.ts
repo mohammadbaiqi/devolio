@@ -1,4 +1,4 @@
-import "dotenv/config";
+import dotenv from "dotenv";
 import express from "express";
 import { Request, Response } from "express";
 import cors from "cors";
@@ -17,6 +17,13 @@ export function createServer() {
   app.get("/api/ping", (_req, res) => {
     const ping = process.env.PING_MESSAGE ?? "ping";
     res.json({ message: ping });
+  });
+  
+  dotenv.config({
+    path:
+      process.env.NODE_ENV === "development"
+        ? ".env.development"
+        : ".env",
   });
 
   app.get(

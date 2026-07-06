@@ -82,7 +82,7 @@
             {
                 "id": 1,
                 "title": "E-commerce Platform",
-                "image": "/images/projects/ecommerce-platform.jpg",
+                "image": "https://miro.medium.com/1*t6JKxMAu0aK4N04ea03SNQ.jpeg",
                 "tags": [
                     "Web",
                     "React"
@@ -91,7 +91,7 @@
             {
                 "id": 2,
                 "title": "Photography Portfolio",
-                "image": "/images/projects/photography-portfolio.jpg",
+                "image": "https://storage.ghost.io/c/80/1d/801d5d13-5875-4136-9bfc-1e2fe01b2bff/content/images/2021/01/Cover-blog-5.jpg",
                 "tags": [
                     "Design"
                 ]
@@ -99,7 +99,7 @@
             {
                 "id": 3,
                 "title": "Mobile App",
-                "image": "/images/projects/mobile-app.jpg",
+                "image": "https://images.ctfassets.net/spoqsaf9291f/6h6MGP5eU4RwFNmSp02J7s/306a4b5b2a9e83304351247ebabe92ed/notion-calendar-download-ios.png",
                 "tags": [
                     "Mobile"
                 ]
@@ -155,8 +155,8 @@
         ],
         "projectDetails": {
             "1": {
-                "heroImage": "/images/projects/ecommerce-platform-hero.jpg",
-                "tagline": "Full-stack online shopping experience",
+                "heroImage": "https://miro.medium.com/1*t6JKxMAu0aK4N04ea03SNQ.jpeg",
+                "tagline": "E-commerce Platform",
                 "liveDemoUrl": "https://shopee.co.id/",
                 "overview": "A modern e-commerce platform built for seamless shopping experience. Designed and developed end-to-end with focus on conversion rate optimization, mobile-first layout, and fast page performance. Integrated with Midtrans payment gateway for Indonesian market.",
                 "info": {
@@ -201,9 +201,9 @@
             ]
             },
             "2": {
-                "heroImage": "/images/projects/photography-portfolio-hero.jpg",
-                "tagline": "Minimalist gallery for a professional photographer",
-                "liveDemoUrl": "https://demo.example.com/photography-portfolio",
+                "heroImage": "https://storage.ghost.io/c/80/1d/801d5d13-5875-4136-9bfc-1e2fe01b2bff/content/images/2021/01/Cover-blog-5.jpg",
+                "tagline": "Photography Portfolio",
+                "liveDemoUrl": "https://unsplash.com/",
                 "overview": "A clean, image-first portfolio site designed to let the photographer's work speak for itself. Built with a masonry grid layout, lazy-loaded images, and smooth lightbox transitions to keep load times fast without sacrificing visual impact.",
                 "info": {
                     "year": "2023",
@@ -212,20 +212,36 @@
                     "duration": "1 month"
                 },
                 "techStack": [
-                    "Next.js",
-                    "Tailwind CSS",
-                    "Cloudinary"
+                    {
+                    "tech": "next.js",
+                    "icon": "/images/icon/nextjs.svg"
+                    },
+                    {
+                    "tech": "tailwind css",
+                    "icon": "/images/icon/tailwindcss.svg"
+                    }
                 ],
-                "gallery": [
-                    "/images/projects/photography-portfolio-1.jpg",
-                    "/images/projects/photography-portfolio-2.jpg",
-                    "/images/projects/photography-portfolio-3.jpg"
+                "whatIBuilt": [
+                    {
+                        "title": "Frontend",
+                        "points": [
+                            {
+                                "description": "Developed the responsive UI using Next.js and Tailwind CSS."
+                            },
+                            {
+                                "description": "Built interactive dashboards with charts, tables, and filtering capabilities."
+                            },
+                            {
+                                "description": "Implemented responsive layouts optimized for desktop, tablet, and mobile devices."
+                            }
+                        ]
+                    }
                 ]
             },
             "3": {
-                "heroImage": "/images/projects/mobile-app-hero.jpg",
-                "tagline": "Cross-platform habit tracker for daily productivity",
-                "liveDemoUrl": "https://demo.example.com/mobile-app",
+                "heroImage": "https://images.ctfassets.net/spoqsaf9291f/6h6MGP5eU4RwFNmSp02J7s/306a4b5b2a9e83304351247ebabe92ed/notion-calendar-download-ios.png",
+                "tagline": "Mobile App Habit Tracker",
+                "liveDemoUrl": "https://app.notion.com/",
                 "overview": "A mobile app that helps users build and track daily habits with streaks, reminders, and progress charts. Built cross-platform to ship on iOS and Android from a single codebase, with offline-first data syncing.",
                 "info": {
                     "year": "2022 — 2023",
@@ -234,37 +250,37 @@
                     "duration": "4 months"
                 },
                 "techStack": [
-                    "React Native",
-                    "TypeScript",
-                    "Firebase"
+                    {
+                    "tech": "React",
+                    "icon": "/images/icon/react.svg"
+                    },
+                    {
+                    "tech": "TypeScript",
+                    "icon": "/images/icon/typescript.svg"
+                    },
+                    {
+                    "tech": "Firebase",
+                    "icon": "/images/icon/firebase.svg"
+                    }
                 ],
-                "gallery": [
-                    "/images/projects/mobile-app-1.jpg",
-                    "/images/projects/mobile-app-2.jpg",
-                    "/images/projects/mobile-app-3.jpg",
-                    "/images/projects/mobile-app-4.jpg"
-                ]
-            },
-            "4": {
-                "heroImage": "/images/projects/brand-identity-hero.jpg",
-                "tagline": "Full brand identity for a boutique coffee roastery",
-                "liveDemoUrl": null,
-                "overview": "Developed a complete brand identity including logo, color palette, packaging design, and brand guidelines for a local coffee roastery. Focused on a warm, artisanal feel that reflects the handcrafted nature of the product.",
-                "info": {
-                    "year": "2022",
-                    "team": "1 person",
-                    "role": "Brand Designer",
-                    "duration": "2 months"
-                },
-                "techStack": [
-                    "Figma",
-                    "Illustrator",
-                    "Photoshop"
-                ],
-                "gallery": [
-                    "/images/projects/brand-identity-1.jpg",
-                    "/images/projects/brand-identity-2.jpg",
-                    "/images/projects/brand-identity-3.jpg"
+                "whatIBuilt": [
+                    {
+                        "title": "Frontend",
+                        "points": [
+                            {
+                                "description": "Developed a cross-platform mobile application using React Native and TypeScript for both iOS and Android."
+                            },
+                            {
+                                "description": "Built responsive and reusable UI components to ensure a consistent user experience across different screen sizes."
+                            },
+                            {
+                                "description": "Implemented habit tracking features including daily streaks, progress indicators, and interactive charts."
+                            },
+                            {
+                                "description": "Integrated Firebase Authentication and Cloud Firestore for secure user management and real-time data synchronization."
+                            }
+                        ]
+                    }
                 ]
             }
         }
