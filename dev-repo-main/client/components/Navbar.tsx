@@ -13,7 +13,7 @@ export default function Navbar({ scrolled, menuOpen, setMenuOpen }: NavbarProps)
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-4 transition-all duration-300 border-b ${
-        scrolled ? "bg-[#0A0A0A]/80 backdrop-blur-md border-white/10 shadow-lg shadow-black/50" : "bg-transparent border-transparent"
+        scrolled ? "bg-[#0D0D0D]/80 backdrop-blur-md border-[#262629] shadow-lg shadow-black/50" : "bg-transparent border-transparent"
       }`}
     >
       <div className="max-w-[1344px] mx-auto flex items-center justify-between">
@@ -25,7 +25,7 @@ export default function Navbar({ scrolled, menuOpen, setMenuOpen }: NavbarProps)
             to={ROUTES.home}
             className="inline-flex items-center font-shantell font-bold text-2xl md:text-3xl tracking-tight bg-gradient-to-r from-white to-white/60 bg-clip-text text-transparent"
           >
-            DevFolio<span className="text-purple-500">.</span>
+            DevFolio<span className="text-[#FFB000]">.</span>
           </NavLink>
         </motion.div>
 
@@ -38,10 +38,10 @@ export default function Navbar({ scrolled, menuOpen, setMenuOpen }: NavbarProps)
               transition={{ delay: i * 0.1 }}
               key={link.label}
               to={link.to}
-              className="text-sm font-medium text-white/70 hover:text-white transition-colors relative group"
+              className="text-sm font-medium text-[#A3A3A3] hover:text-white transition-colors relative group"
             >
               {link.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-purple-500 transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#FFB000] transition-all duration-300 group-hover:w-full" />
             </MotionNavLink>
           ))}
           <MotionNavLink
@@ -49,7 +49,7 @@ export default function Navbar({ scrolled, menuOpen, setMenuOpen }: NavbarProps)
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4 }}
             to={ROUTES.contact}
-            className="px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 text-white text-sm font-medium backdrop-blur-sm transition-all duration-300"
+            className="px-5 py-2.5 rounded-full bg-[#FFB000] hover:bg-[#E69E00] text-[#0D0D0D] text-sm font-semibold transition-all duration-300"
           >
             Let's Talk
           </MotionNavLink>
