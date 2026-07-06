@@ -1,0 +1,258 @@
+{
+    "overview": {
+        "header": {
+            "title": "Hi, I'm Fadli Ismail",
+            "subTitle": "Data Science Student | Web Developer | Tech Enthusiast",
+            "mainImage": "https://picsum.photos/seed/fadli-profile/700/700"
+        },
+        "aboutMe": {
+            "headerTitle": "About Me",
+            "subHeaderTitle": "A passionate Data Science student at Universitas Cakrawala with a keen interest in Web Development and building data-driven interactive applications.",
+            "skills": [
+                "Python",
+                "Data Analysis",
+                "Machine Learning",
+                "TypeScript",
+                "React",
+                "Node.js",
+                "Vite",
+                "Tailwind CSS"
+            ],
+            "projectCount": 5,
+            "experience": "Student"
+        },
+        "workExperience": [
+            {
+                "id": 1,
+                "company": "Universitas Cakrawala",
+                "position": "Data Science Student & Project Leader",
+                "period": "2022 - Present"
+            }
+        ],
+        "portfolio": [
+            {
+                "id": 1,
+                "title": "Interactive Web Portfolio (DevFolio)",
+                "image": "https://picsum.photos/seed/fadli-proj1/600/450",
+                "tags": ["Web", "React", "TypeScript"]
+            },
+            {
+                "id": 2,
+                "title": "Data Visualization Dashboard",
+                "image": "https://picsum.photos/seed/fadli-proj2/600/450",
+                "tags": ["Data Science", "Python"]
+            }
+        ],
+        "contact": {
+            "headerTitle": "Let's Build Something Together",
+            "subHeaderTitle": "Open for new opportunities, collaborations, or just a good conversation about tech and data.",
+            "email": "fadli.ismail@example.com",
+            "phone": "+62 812-3456-7890",
+            "location": "Indonesia",
+            "linkedin": "https://linkedin.com/in/fadliismail",
+            "github": "https://github.com/fadliismail"
+        }
+    },
+    "portofolio": {
+        "profile": {
+            "bio": "I blend analytical thinking from Data Science with creative problem-solving in Web Development to build intuitive and data-driven web experiences."
+        },
+        "projects": [
+            {
+                "id": 1,
+                "title": "Interactive Web Portfolio (DevFolio)",
+                "image": "https://picsum.photos/seed/fadli-proj1/600/450",
+                "tags": ["Web", "React", "TypeScript"]
+            },
+            {
+                "id": 2,
+                "title": "Data Visualization Dashboard",
+                "image": "https://picsum.photos/seed/fadli-proj2/600/450",
+                "tags": ["Data Science", "Python"]
+            }
+        ],
+        "projectDetails": {
+            "1": {
+                "heroImage": "https://picsum.photos/seed/fadli-proj1/1200/600",
+                "tagline": "DevFolio Web Platform",
+                "liveDemoUrl": "https://example.com/devfolio",
+                "overview": "A modern, interactive portfolio platform built for a university project to showcase technical skills and projects with a focus on UI/UX and dynamic content rendering.",
+                "info": {
+                    "year": "2024",
+                    "team": "6 people",
+                    "role": "Project Leader / Fullstack Developer",
+                    "duration": "1 month"
+                },
+                "techStack": [
+                    {
+                        "tech": "React",
+                        "icon": "/images/icon/react.svg"
+                    },
+                    {
+                        "tech": "TypeScript",
+                        "icon": "/images/icon/typescript.svg"
+                    },
+                    {
+                        "tech": "Tailwind CSS",
+                        "icon": "/images/icon/tailwindcss.svg"
+                    }
+                ],
+                "whatIBuilt": [
+                    {
+                        "title": "Fullstack Development",
+                        "points": [
+                            {
+                                "description": "Led the architecture design and development of the DevFolio platform."
+                            },
+                            {
+                                "description": "Implemented dynamic JSON-based content loading for multi-user support."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "2": {
+                "heroImage": "https://picsum.photos/seed/fadli-proj2/1200/600",
+                "tagline": "Data Visualization Dashboard",
+                "liveDemoUrl": "https://example.com/datadash",
+                "overview": "An analytical dashboard providing insights from complex datasets, featuring interactive charts and real-time filtering capabilities.",
+                "info": {
+                    "year": "2023",
+                    "team": "Individual",
+                    "role": "Data Analyst",
+                    "duration": "2 months"
+                },
+                "techStack": [
+                    {
+                        "tech": "Python",
+                        "icon": "/images/icon/python.svg"
+                    },
+                    {
+                        "tech": "React",
+                        "icon": "/images/icon/react.svg"
+                    }
+                ],
+                "whatIBuilt": [
+                    {
+                        "title": "Data Processing & UI",
+                        "points": [
+                            {
+                                "description": "Processed and cleaned raw data sets for visualization."
+                            },
+                            {
+                                "description": "Built an interactive web interface to explore data insights easily."
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    "about": {
+        "whyHireMe": {
+            "image": "https://picsum.photos/seed/fadli-about/700/700",
+            "title": "Why Collaborate with me?",
+            "description": "As a Data Science student with web development skills, I bring a unique perspective to software engineering. I ensure that applications are not only visually appealing but also structured, scalable, and data-driven.",
+            "stats": [
+                {
+                    "value": "5+",
+                    "label": "Projects Completed"
+                },
+                {
+                    "value": "100%",
+                    "label": "Commitment"
+                }
+            ],
+            "ctaLabel": "Contact Me",
+            "ctaLink": "#contact"
+        },
+        "portfolioPreview": {
+            "heading": "Let's have a look at my Portfolio",
+            "seeAllLabel": "See All",
+            "seeAllLink": "/portfolio",
+            "featuredProjectIds": [1, 2],
+            "filterTags": [
+                "Web Development",
+                "Data Science",
+                "Machine Learning"
+            ],
+            "highlightedProject": {
+                "id": 1,
+                "title": "DevFolio Web Platform",
+                "link": "https://example.com/devfolio",
+                "description": "A dynamic portfolio builder utilizing modern React and Express architectures."
+            }
+        },
+        "cta": {
+            "heading": "Have an Awesome Project Idea? Let's Discuss",
+            "emailPlaceholder": "Enter Email Address",
+            "submitLabel": "Send",
+            "trustBadges": [
+                {
+                    "icon": "star",
+                    "text": "Highly Dedicated"
+                },
+                {
+                    "icon": "trophy",
+                    "text": "Top Project Leader"
+                },
+                {
+                    "icon": "badge-check",
+                    "text": "Data Science Enthusiast"
+                }
+            ]
+        }
+    },
+    "footer": {
+        "cta": {
+            "heading": "Let's Connect",
+            "buttonLabel": "Contact Me",
+            "buttonLink": "#contact"
+        },
+        "brand": {
+            "logo": "Fadli.Dev",
+            "description": "Data Science student & Web Developer at Universitas Cakrawala, creating data-driven digital experiences.",
+            "socials": [
+                {
+                    "platform": "github",
+                    "url": "https://github.com/fadliismail"
+                },
+                {
+                    "platform": "linkedin",
+                    "url": "https://linkedin.com/in/fadliismail"
+                },
+                {
+                    "platform": "instagram",
+                    "url": "https://instagram.com/fadliismail"
+                }
+            ]
+        },
+        "navigation": {
+            "heading": "Navigation",
+            "links": [
+                {
+                    "label": "Home",
+                    "url": "/"
+                },
+                {
+                    "label": "About Us",
+                    "url": "/about-us/fadli"
+                },
+                {
+                    "label": "Portfolio",
+                    "url": "/portfolio"
+                },
+                {
+                    "label": "Contact",
+                    "url": "/contact"
+                }
+            ]
+        },
+        "contact": {
+            "heading": "Contact",
+            "phone": "+62 812-3456-7890",
+            "email": "fadli.ismail@example.com",
+            "website": "fadlidev.com"
+        }
+    }
+}
