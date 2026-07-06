@@ -1,25 +1,23 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Code2, Monitor, Database, TerminalSquare, User, Briefcase, ChevronRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { MotionNavLink } from "@/components/navigation";
+import { ROUTES } from "@/config/navigation";
 
 const projects = [
   {
     title: "Fintech Dashboard",
-    slug: "fintech-dashboard",
     category: "Web Application",
     image: "/images/dashboard_mockup_1782570304246.jpg",
     tags: ["React", "TypeScript", "TailwindCSS"],
   },
   {
     title: "FitTrack Pro",
-    slug: "fittrack-pro",
     category: "Mobile UI Design",
     image: "/images/mobile_app_mockup_1782570315356.jpg",
     tags: ["React Native", "UI/UX", "Figma"],
   },
   {
     title: "Nexus Digitals",
-    slug: "nexus-digitals",
     category: "Corporate Landing",
     image: "/images/corporate_site_mockup_1782570326008.jpg",
     tags: ["Next.js", "Framer Motion", "Shadcn"],
@@ -83,40 +81,40 @@ export default function Index() {
             variants={staggerContainer}
             className="flex flex-col items-center gap-6 max-w-4xl"
           >
-            <motion.div variants={fadeIn} className="inline-flex items-center gap-2 rounded-full border border-[#FFB000]/25 bg-[#FFB000]/10 px-4 py-2 backdrop-blur-sm">
-              <span className="h-2 w-2 animate-pulse rounded-full bg-[#FFB000]" />
-              <span className="text-xs font-medium uppercase tracking-[0.24em] text-[#FFFFFF]/80">Available for work</span>
+            <motion.div variants={fadeIn} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1C1C1E] border border-[#262629] backdrop-blur-sm">
+              <span className="w-2 h-2 rounded-full bg-[#FFB000] animate-pulse" />
+              <span className="text-xs font-medium text-[#A3A3A3] tracking-wide uppercase">Available for work</span>
             </motion.div>
 
             <motion.h1 variants={fadeIn} className="font-shantell font-semibold text-5xl sm:text-6xl md:text-7xl lg:text-[90px] leading-[1.1] tracking-tight">
               Crafting digital <br className="hidden md:block" />
-              <span className="bg-gradient-to-r from-[#FFB000] via-[#FFC44D] to-[#FF8A00] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#FFB000] via-[#FFC533] to-[#FFE299] bg-clip-text text-transparent">
                 experiences
               </span> that matter.
             </motion.h1>
 
-            <motion.p variants={fadeIn} className="text-lg md:text-xl text-white/60 font-light max-w-2xl leading-relaxed mt-4">
+            <motion.p variants={fadeIn} className="text-lg md:text-xl text-[#A3A3A3] font-light max-w-2xl leading-relaxed mt-4">
               I'm a Fullstack Developer & Designer focused on building modern, high-performance web applications with exceptional user interfaces.
             </motion.p>
 
             <motion.div variants={fadeIn} className="flex flex-col sm:flex-row items-center gap-4 mt-8">
-              <a
-                href="#portfolio"
-                className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#FFB000] px-8 py-4 text-base font-semibold text-[#0D0D0D] transition-transform hover:scale-[1.02]"
+              <MotionNavLink
+                to={ROUTES.portfolio}
+                className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#FFB000] text-[#0D0D0D] font-semibold text-base hover:bg-[#E69E00] transition-colors"
               >
                 View My Work
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-              </a>
-              <a
-                href="#contact"
-                className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-8 py-4 text-base font-medium text-white backdrop-blur-sm transition-colors hover:bg-white/10"
+              </MotionNavLink>
+              <MotionNavLink
+                to={ROUTES.contact}
+                className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-[#1C1C1E] border border-[#262629] text-white font-medium text-base hover:bg-[#262629] transition-colors backdrop-blur-sm"
               >
                 Contact Me
-              </a>
+              </MotionNavLink>
             </motion.div>
           </motion.div>
 
-          {/* Hero Image / Abstract Representation */}
+          {/* Hero Image */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -124,8 +122,8 @@ export default function Index() {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="w-full mt-20 md:mt-28 relative"
           >
-            <div className="group relative flex aspect-[16/9] items-center justify-center overflow-hidden rounded-[24px] border border-white/10 bg-[#1C1C1E]/90 backdrop-blur-md md:aspect-[21/9] md:rounded-[40px]">
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] to-transparent opacity-80 z-10" />
+            <div className="relative rounded-2xl md:rounded-[40px] overflow-hidden border border-[#262629] bg-[#1C1C1E] backdrop-blur-md aspect-[16/9] md:aspect-[21/9] flex items-center justify-center group">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D] to-transparent opacity-80 z-10" />
               <img
                 src="/images/dashboard_mockup_1782570304246.jpg"
                 alt="Hero Showcase"
@@ -136,28 +134,28 @@ export default function Index() {
               <motion.div
                 animate={{ y: [0, -10, 0] }}
                 transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                className="absolute left-[10%] top-1/4 z-20 hidden items-center gap-3 rounded-2xl border border-white/10 bg-black/45 px-4 py-3 backdrop-blur-md md:flex"
+                className="absolute top-1/4 left-[10%] z-20 px-4 py-3 rounded-xl bg-[#0D0D0D]/60 backdrop-blur-md border border-[#262629] hidden md:flex items-center gap-3"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#FFB000]/15 text-[#FFB000]">
+                <div className="w-10 h-10 rounded-full bg-[#FFB000]/20 flex items-center justify-center text-[#FFB000]">
                   <Code2 size={20} />
                 </div>
                 <div>
                   <p className="text-sm font-semibold">Clean Code</p>
-                  <p className="text-xs text-white/50">React & TypeScript</p>
+                  <p className="text-xs text-[#A3A3A3]">React & TypeScript</p>
                 </div>
               </motion.div>
 
               <motion.div
                 animate={{ y: [0, 10, 0] }}
                 transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1 }}
-                className="absolute bottom-1/4 right-[10%] z-20 hidden items-center gap-3 rounded-2xl border border-white/10 bg-black/45 px-4 py-3 backdrop-blur-md md:flex"
+                className="absolute bottom-1/4 right-[10%] z-20 px-4 py-3 rounded-xl bg-[#0D0D0D]/60 backdrop-blur-md border border-[#262629] hidden md:flex items-center gap-3"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#FFB000]/15 text-[#FFB000]">
+                <div className="w-10 h-10 rounded-full bg-[#FFB000]/20 flex items-center justify-center text-[#FFB000]">
                   <Monitor size={20} />
                 </div>
                 <div>
                   <p className="text-sm font-semibold">Pixel Perfect</p>
-                  <p className="text-xs text-white/50">UI/UX Design</p>
+                  <p className="text-xs text-[#A3A3A3]">UI/UX Design</p>
                 </div>
               </motion.div>
             </div>
@@ -179,16 +177,16 @@ export default function Index() {
               <motion.div variants={fadeIn}>
                 <h2 className="font-shantell font-medium text-4xl md:text-5xl lg:text-[56px] leading-tight">
                   Innovating through <br />
-                  <span className="text-white/50">design and code.</span>
+                  <span className="text-[#A3A3A3]">design and code.</span>
                 </h2>
               </motion.div>
-              <motion.p variants={fadeIn} className="text-lg text-white/70 font-light leading-relaxed">
+              <motion.p variants={fadeIn} className="text-lg text-[#A3A3A3] font-light leading-relaxed">
                 I bridge the gap between aesthetics and functionality. With a strong foundation in both design principles and technical architecture, I build products that are not just beautiful, but robust, accessible, and scalable.
               </motion.p>
 
               <motion.div variants={fadeIn} className="grid grid-cols-2 gap-4 mt-4">
                 {skills.map((skill, idx) => (
-                  <div key={idx} className="flex items-center gap-3 p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-white/10 transition-colors">
+                  <div key={idx} className="flex items-center gap-3 p-4 rounded-2xl bg-[#1C1C1E] border border-[#262629] hover:border-[#4A4A4D] transition-colors">
                     <div className="text-[#FFB000]">
                       {skill.icon}
                     </div>
@@ -206,21 +204,21 @@ export default function Index() {
               transition={{ duration: 0.8 }}
               className="grid grid-cols-2 gap-4 md:gap-6"
             >
-              <div className="flex flex-col gap-2 rounded-[20px] border border-white/10 bg-[#1C1C1E] p-8 shadow-[0_16px_45px_rgba(0,0,0,0.25)] backdrop-blur-sm">
-                <span className="bg-gradient-to-br from-[#FFB000] to-[#FFCB57] bg-clip-text text-5xl font-bold text-transparent">8+</span>
-                <span className="text-white/60 text-sm font-medium uppercase tracking-wider">Years Exp</span>
+              <div className="flex flex-col gap-2 p-8 rounded-3xl bg-[#1C1C1E] border border-[#262629]">
+                <span className="text-5xl font-bold bg-gradient-to-br from-[#FFB000] to-[#FFC533] bg-clip-text text-transparent">8+</span>
+                <span className="text-[#A3A3A3] text-sm font-medium uppercase tracking-wider">Years Exp</span>
               </div>
-              <div className="mt-8 flex flex-col gap-2 rounded-[20px] border border-white/10 bg-[#1C1C1E] p-8 shadow-[0_16px_45px_rgba(0,0,0,0.25)] backdrop-blur-sm">
-                <span className="bg-gradient-to-br from-[#FFB000] to-[#FFCB57] bg-clip-text text-5xl font-bold text-transparent">50+</span>
-                <span className="text-white/60 text-sm font-medium uppercase tracking-wider">Projects</span>
+              <div className="flex flex-col gap-2 p-8 rounded-3xl bg-[#1C1C1E] border border-[#262629] mt-8">
+                <span className="text-5xl font-bold bg-gradient-to-br from-[#FFB000] to-[#FFC533] bg-clip-text text-transparent">50+</span>
+                <span className="text-[#A3A3A3] text-sm font-medium uppercase tracking-wider">Projects</span>
               </div>
-              <div className="-mt-8 flex flex-col gap-2 rounded-[20px] border border-white/10 bg-[#1C1C1E] p-8 shadow-[0_16px_45px_rgba(0,0,0,0.25)] backdrop-blur-sm">
-                <span className="bg-gradient-to-br from-[#FFB000] to-[#FFCB57] bg-clip-text text-5xl font-bold text-transparent">100%</span>
-                <span className="text-white/60 text-sm font-medium uppercase tracking-wider">Client Match</span>
+              <div className="flex flex-col gap-2 p-8 rounded-3xl bg-[#1C1C1E] border border-[#262629] -mt-8">
+                <span className="text-5xl font-bold bg-gradient-to-br from-[#FFB000] to-[#FFC533] bg-clip-text text-transparent">100%</span>
+                <span className="text-[#A3A3A3] text-sm font-medium uppercase tracking-wider">Client Match</span>
               </div>
-              <div className="flex flex-col gap-2 rounded-[20px] border border-white/10 bg-[#1C1C1E] p-8 shadow-[0_16px_45px_rgba(0,0,0,0.25)] backdrop-blur-sm">
-                <span className="bg-gradient-to-br from-[#FFB000] to-[#FFCB57] bg-clip-text text-5xl font-bold text-transparent">3</span>
-                <span className="text-white/60 text-sm font-medium uppercase tracking-wider">Awards</span>
+              <div className="flex flex-col gap-2 p-8 rounded-3xl bg-[#1C1C1E] border border-[#262629]">
+                <span className="text-5xl font-bold bg-gradient-to-br from-[#FFB000] to-[#FFC533] bg-clip-text text-transparent">3</span>
+                <span className="text-[#A3A3A3] text-sm font-medium uppercase tracking-wider">Awards</span>
               </div>
             </motion.div>
           </div>
@@ -228,7 +226,7 @@ export default function Index() {
       </section>
 
       {/* EXPERIENCE SECTION */}
-      <section id="experience" className="relative border-y border-white/5 bg-[#0D0D0D] px-6 py-24 md:px-12">
+      <section id="experience" className="px-6 md:px-12 py-24 bg-[#0A0A0A] relative border-y border-[#262629]">
         <div className="max-w-[1024px] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -237,12 +235,12 @@ export default function Index() {
             className="text-center mb-16"
           >
             <h2 className="font-shantell font-medium text-4xl md:text-5xl mb-4">My Journey</h2>
-            <p className="text-white/50 text-lg">A timeline of my professional career.</p>
+            <p className="text-[#A3A3A3] text-lg">A timeline of my professional career.</p>
           </motion.div>
 
-          <div className="relative border-l border-white/10 ml-4 md:ml-0 md:border-none">
+          <div className="relative border-l border-[#262629] ml-4 md:ml-0 md:border-none">
             {/* Desktop Center Line */}
-            <div className="hidden md:block absolute top-0 bottom-0 left-1/2 w-px bg-white/10 -translate-x-1/2" />
+            <div className="hidden md:block absolute top-0 bottom-0 left-1/2 w-px bg-[#262629] -translate-x-1/2" />
 
             <div className="flex flex-col gap-12 md:gap-24">
               {experiences.map((exp, i) => (
@@ -256,24 +254,24 @@ export default function Index() {
                     }`}
                 >
                   {/* Timeline Node */}
-                  <div className="absolute -left-6 z-10 flex h-12 w-12 items-center justify-center rounded-full border-4 border-[#0D0D0D] bg-[#1C1C1E] shadow-xl md:left-1/2 md:-translate-x-1/2">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-[#FFB000] to-[#FFCB57] text-[#0D0D0D]">
+                  <div className="absolute -left-6 md:left-1/2 md:-translate-x-1/2 w-12 h-12 rounded-full bg-[#0D0D0D] border-4 border-[#0A0A0A] flex items-center justify-center z-10 shadow-xl">
+                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#FFB000] to-[#E69E00] flex items-center justify-center text-[#0D0D0D]">
                       {exp.icon}
                     </div>
                   </div>
 
                   {/* Content */}
                   <div className={`pl-8 md:pl-0 md:w-1/2 ${i % 2 === 0 ? "md:pl-16" : "md:pr-16 md:text-right"}`}>
-                    <div className={`flex flex-col gap-2 p-6 md:p-8 rounded-3xl bg-white/5 border border-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-white/20 transition-all duration-300 ${i % 2 === 0 ? "text-left" : "md:text-right text-left"
+                    <div className={`flex flex-col gap-2 p-6 md:p-8 rounded-3xl bg-[#1C1C1E] border border-[#262629] hover:bg-[#262629] hover:border-[#4A4A4D] transition-all duration-300 ${i % 2 === 0 ? "text-left" : "md:text-right text-left"
                       }`}>
-                      <span className="mb-1 text-sm font-medium uppercase tracking-[0.24em] text-[#FFB000]">
+                      <span className="text-[#FFB000] font-medium text-sm tracking-widest uppercase mb-1">
                         {exp.period}
                       </span>
                       <h3 className="font-shantell text-2xl md:text-3xl font-semibold">
                         {exp.role}
                       </h3>
-                      <p className="text-white/70 font-medium mb-3">{exp.company}</p>
-                      <p className="text-white/50 text-sm md:text-base leading-relaxed">
+                      <p className="text-white font-medium mb-3">{exp.company}</p>
+                      <p className="text-[#A3A3A3] text-sm md:text-base leading-relaxed">
                         {exp.desc}
                       </p>
                     </div>
@@ -297,20 +295,20 @@ export default function Index() {
               <h2 className="font-shantell font-medium text-4xl md:text-[56px] leading-tight mb-4">
                 Selected Work
               </h2>
-              <p className="text-white/60 text-lg max-w-xl">
+              <p className="text-[#A3A3A3] text-lg max-w-xl">
                 A collection of my recent projects focusing on seamless user experiences and modern aesthetics.
               </p>
             </motion.div>
-            <motion.a
+            <MotionNavLink
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              href="/portfolio"
-              className="group inline-flex items-center gap-2 font-medium text-[#FFB000] transition-colors hover:text-[#FFCB57]"
+              to={ROUTES.portfolio}
+              className="inline-flex items-center gap-2 text-[#FFB000] hover:text-[#FFC533] font-medium group"
             >
               View all projects
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-            </motion.a>
+            </MotionNavLink>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -321,7 +319,7 @@ export default function Index() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15 }}
-                className="group flex flex-col overflow-hidden rounded-[24px] border border-white/10 bg-[#1C1C1E] transition-all duration-500 hover:border-[#FFB000]/50 hover:shadow-[0_20px_60px_rgba(255,176,0,0.12)]"
+                className="group rounded-3xl overflow-hidden bg-[#1C1C1E] border border-[#262629] hover:border-[#FFB000]/40 transition-all duration-500 flex flex-col"
               >
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
@@ -331,30 +329,33 @@ export default function Index() {
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute top-4 right-4 z-20 flex gap-2">
-                    <span className="px-3 py-1 rounded-full bg-black/50 backdrop-blur-md border border-white/10 text-xs font-medium">
+                    <span className="px-3 py-1 rounded-full bg-[#0D0D0D]/70 backdrop-blur-md border border-[#262629] text-xs font-medium">
                       {project.category}
                     </span>
                   </div>
                 </div>
 
                 <div className="p-6 md:p-8 flex flex-col flex-1 justify-between gap-6 relative">
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent to-[#FFB000]/12 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#FFB000]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                   <div>
-                    <h3 className="mb-2 font-shantell text-2xl font-semibold transition-colors group-hover:text-[#FFB000]">
+                    <h3 className="font-shantell text-2xl font-semibold mb-2 group-hover:text-[#FFB000] transition-colors">
                       {project.title}
                     </h3>
                     <div className="flex flex-wrap gap-2 mt-4">
                       {project.tags.map(tag => (
-                        <span key={tag} className="text-xs text-white/50 px-2 py-1 rounded-md bg-white/5">
+                        <span key={tag} className="text-xs text-[#A3A3A3] px-2 py-1 rounded-md bg-[#262629]">
                           {tag}
                         </span>
                       ))}
                     </div>
                   </div>
 
-                <Link to={project.slug ? `/portfolio/${project.slug}` : "#"} className="inline-flex items-center gap-2 text-sm font-medium text-white/80 hover:text-white transition-colors">
-                  View Case Study <ChevronRight size={16} />
-                </Link>
+                  <MotionNavLink
+                    to={ROUTES.contact}
+                    className="inline-flex items-center gap-2 text-sm font-medium text-[#A3A3A3] hover:text-[#FFB000] transition-colors"
+                  >
+                    Discuss Project <ChevronRight size={16} />
+                  </MotionNavLink>
                 </div>
               </motion.div>
             ))}

@@ -1,0 +1,357 @@
+{
+    "overview": {
+        "header": {
+            "title": "Hi, I'm M Farhan Muzaki",
+            "subTitle": "Frontend Developer | UI/UX Enthusiast | React Specialist",
+            "mainImage": "https://picsum.photos/seed/farhan-profile/700/700"
+        },
+        "aboutMe": {
+            "headerTitle": "About Me",
+            "subHeaderTitle": "A passionate frontend developer with a strong eye for design and a love for crafting smooth, pixel-perfect web experiences using React and modern tooling.",
+            "skills": [
+                "TypeScript",
+                "React",
+                "Next.js",
+                "Vite",
+                "Tailwind CSS",
+                "Framer Motion",
+                "Node.js",
+                "Figma",
+                "Git",
+                "REST API"
+            ],
+            "projectCount": 18,
+            "experience": "2+ Years"
+        },
+        "workExperience": [
+            {
+                "id": 1,
+                "company": "Tokopedia",
+                "position": "Frontend Developer",
+                "period": "Mar 2024 - Present"
+            },
+            {
+                "id": 2,
+                "company": "Startup XYZ",
+                "position": "UI Developer Intern",
+                "period": "2022 - 2023"
+            }
+        ],
+        "portfolio": [
+            {
+                "id": 1,
+                "title": "Dashboard Analytics",
+                "image": "https://picsum.photos/seed/farhan-proj1/600/450",
+                "tags": ["Web", "React"]
+            },
+            {
+                "id": 2,
+                "title": "E-Learning Platform",
+                "image": "https://picsum.photos/seed/farhan-proj2/600/450",
+                "tags": ["Design", "Next.js"]
+            },
+            {
+                "id": 3,
+                "title": "Task Management App",
+                "image": "https://picsum.photos/seed/farhan-proj3/600/450",
+                "tags": ["Mobile", "React Native"]
+            }
+        ],
+        "contact": {
+            "headerTitle": "Let's Build Something Together",
+            "subHeaderTitle": "Open for new opportunities, freelance projects, or just a good conversation about tech.",
+            "email": "farhan.muzaki@example.com",
+            "phone": "+62 821-9876-5432",
+            "location": "Jakarta, Indonesia",
+            "linkedin": "https://linkedin.com/in/farhanmuzaki",
+            "github": "https://github.com/farhanmuzaki"
+        }
+    },
+    "portofolio": {
+        "profile": {
+            "bio": "I design and build web products that are fast, beautiful, and intuitive. Every line of code I write is driven by a desire to create the best possible user experience."
+        },
+        "projects": [
+            {
+                "id": 1,
+                "title": "Dashboard Analytics",
+                "image": "https://picsum.photos/seed/farhan-proj1/600/450",
+                "tags": ["Web", "React", "TypeScript"]
+            },
+            {
+                "id": 2,
+                "title": "E-Learning Platform",
+                "image": "https://picsum.photos/seed/farhan-proj2/600/450",
+                "tags": ["Design", "Next.js"]
+            },
+            {
+                "id": 3,
+                "title": "Task Management App",
+                "image": "https://picsum.photos/seed/farhan-proj3/600/450",
+                "tags": ["Mobile", "React Native"]
+            },
+            {
+                "id": 4,
+                "title": "UI Component Library",
+                "image": "https://picsum.photos/seed/farhan-proj4/600/450",
+                "tags": ["Open Source", "Design System"]
+            },
+            {
+                "id": 5,
+                "title": "Real-Time Chat App",
+                "image": "https://picsum.photos/seed/farhan-proj5/600/450",
+                "tags": ["WebSocket", "React"]
+            },
+            {
+                "id": 6,
+                "title": "Portfolio Website",
+                "image": "https://picsum.photos/seed/farhan-proj6/600/450",
+                "tags": ["Web", "Framer Motion"]
+            }
+        ],
+        "projectDetails": {
+            "1": {
+                "heroImage": "https://picsum.photos/seed/farhan-proj1/1200/600",
+                "tagline": "Dashboard Analytics",
+                "liveDemoUrl": "https://example.com/dashboard",
+                "overview": "A comprehensive analytics dashboard built for a SaaS product, featuring real-time data visualization, customizable widgets, and role-based access control. Designed from scratch in Figma and implemented in React with TypeScript.",
+                "info": {
+                    "year": "2024",
+                    "team": "3 people",
+                    "role": "Lead Frontend Developer",
+                    "duration": "3 months"
+                },
+                "techStack": [
+                    {
+                        "tech": "React",
+                        "icon": "/images/icon/react.svg"
+                    },
+                    {
+                        "tech": "TypeScript",
+                        "icon": "/images/icon/typescript.svg"
+                    },
+                    {
+                        "tech": "Recharts",
+                        "icon": "/images/icon/react.svg"
+                    },
+                    {
+                        "tech": "Tailwind CSS",
+                        "icon": "/images/icon/tailwindcss.svg"
+                    }
+                ],
+                "whatIBuilt": [
+                    {
+                        "title": "Frontend",
+                        "points": [
+                            {
+                                "description": "Built a modular dashboard layout with drag-and-drop widget placement using React and TypeScript."
+                            },
+                            {
+                                "description": "Integrated Recharts library to render real-time line, bar, and pie charts with WebSocket data feeds."
+                            },
+                            {
+                                "description": "Implemented role-based rendering so admins, managers, and viewers see different sets of widgets."
+                            },
+                            {
+                                "description": "Optimized render performance using React.memo and useMemo to prevent unnecessary re-renders on fast data updates."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "2": {
+                "heroImage": "https://picsum.photos/seed/farhan-proj2/1200/600",
+                "tagline": "E-Learning Platform",
+                "liveDemoUrl": "https://example.com/elearning",
+                "overview": "A full-featured e-learning platform where instructors can create courses with video lessons, quizzes, and certificates. Students can track their progress and earn badges upon completion.",
+                "info": {
+                    "year": "2023 — 2024",
+                    "team": "4 people",
+                    "role": "Frontend Developer & UI Designer",
+                    "duration": "5 months"
+                },
+                "techStack": [
+                    {
+                        "tech": "Next.js",
+                        "icon": "/images/icon/nextjs.svg"
+                    },
+                    {
+                        "tech": "TypeScript",
+                        "icon": "/images/icon/typescript.svg"
+                    },
+                    {
+                        "tech": "Tailwind CSS",
+                        "icon": "/images/icon/tailwindcss.svg"
+                    }
+                ],
+                "whatIBuilt": [
+                    {
+                        "title": "Frontend",
+                        "points": [
+                            {
+                                "description": "Designed and implemented the course detail page with a sticky sidebar for lesson navigation and progress tracking."
+                            },
+                            {
+                                "description": "Built a video player component with custom controls, playback speed selector, and chapter markers."
+                            },
+                            {
+                                "description": "Created an interactive quiz engine supporting multiple-choice, true/false, and short-answer question types."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "3": {
+                "heroImage": "https://picsum.photos/seed/farhan-proj3/1200/600",
+                "tagline": "Task Management App",
+                "liveDemoUrl": "https://example.com/taskapp",
+                "overview": "A cross-platform task management mobile app with board views (Kanban), deadline notifications, team collaboration features, and offline-first architecture.",
+                "info": {
+                    "year": "2023",
+                    "team": "2 people",
+                    "role": "Mobile Developer",
+                    "duration": "2 months"
+                },
+                "techStack": [
+                    {
+                        "tech": "React Native",
+                        "icon": "/images/icon/react.svg"
+                    },
+                    {
+                        "tech": "TypeScript",
+                        "icon": "/images/icon/typescript.svg"
+                    },
+                    {
+                        "tech": "Firebase",
+                        "icon": "/images/icon/firebase.svg"
+                    }
+                ],
+                "whatIBuilt": [
+                    {
+                        "title": "Mobile",
+                        "points": [
+                            {
+                                "description": "Built a drag-and-drop Kanban board using react-native-draggable-flatlist for smooth card reordering."
+                            },
+                            {
+                                "description": "Integrated Firebase Cloud Messaging to send push notifications for upcoming task deadlines."
+                            },
+                            {
+                                "description": "Implemented offline-first data sync using AsyncStorage and a sync queue that pushes changes when connectivity is restored."
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    "about": {
+        "whyHireMe": {
+            "image": "https://picsum.photos/seed/farhan-about/700/700",
+            "title": "Why Hire me?",
+            "description": "I combine strong technical skills with a designer's eye to build products that are not only functional but also delightful to use. I care deeply about performance, accessibility, and the small details that make a big difference.",
+            "stats": [
+                {
+                    "value": "18+",
+                    "label": "Projects Completed"
+                },
+                {
+                    "value": "2+",
+                    "label": "Years Experience"
+                }
+            ],
+            "ctaLabel": "Hire me",
+            "ctaLink": "#contact"
+        },
+        "portfolioPreview": {
+            "heading": "Lets have a look at my Portfolio",
+            "seeAllLabel": "See All",
+            "seeAllLink": "/portfolio",
+            "featuredProjectIds": [1, 2, 3],
+            "filterTags": [
+                "Landing Page",
+                "Dashboard",
+                "Mobile App",
+                "E-Learning",
+                "Design System"
+            ],
+            "highlightedProject": {
+                "id": 1,
+                "title": "Dashboard Analytics",
+                "link": "https://example.com/dashboard",
+                "description": "A modular analytics dashboard with real-time charts, role-based access control, and drag-and-drop widget customization — built in React and TypeScript for a B2B SaaS product."
+            }
+        },
+        "cta": {
+            "heading": "Have an Awesome Project Idea? Let's Discuss",
+            "emailPlaceholder": "Enter Email Address",
+            "submitLabel": "Send",
+            "trustBadges": [
+                {
+                    "icon": "star",
+                    "text": "5.0/5 Client Rating"
+                },
+                {
+                    "icon": "trophy",
+                    "text": "10+ Winning Projects"
+                },
+                {
+                    "icon": "badge-check",
+                    "text": "React Certified Developer"
+                }
+            ]
+        }
+    },
+    "footer": {
+        "cta": {
+            "heading": "Lets Connect",
+            "buttonLabel": "Hire me",
+            "buttonLink": "#contact"
+        },
+        "brand": {
+            "logo": "FarhanDev",
+            "description": "Frontend developer based in Jakarta, Indonesia. Building fast, beautiful, and user-centric web applications with React and modern tooling.",
+            "socials": [
+                {
+                    "platform": "github",
+                    "url": "https://github.com/farhanmuzaki"
+                },
+                {
+                    "platform": "linkedin",
+                    "url": "https://linkedin.com/in/farhanmuzaki"
+                },
+                {
+                    "platform": "instagram",
+                    "url": "https://instagram.com/farhanmuzaki"
+                }
+            ]
+        },
+        "navigation": {
+            "heading": "Navigation",
+            "links": [
+                {
+                    "label": "Home",
+                    "url": "/"
+                },
+                {
+                    "label": "About Us",
+                    "url": "/about-us/farhan"
+                },
+                {
+                    "label": "Portfolio",
+                    "url": "/portfolio"
+                },
+                {
+                    "label": "Contact",
+                    "url": "/contact"
+                }
+            ]
+        },
+        "contact": {
+            "heading": "Contact",
+            "phone": "+62 821-9876-5432",
+            "email": "farhan.muzaki@example.com",
+            "website": "farhandev.com"
+        }
+    }
+}
