@@ -85,7 +85,7 @@ export default function Contact() {
                 Get in Touch
               </h2>
               <p className="mt-2 text-lg leading-8 text-[#A3A3A3]">
-                Aute magna irure deserunt veniam aliqua magna enim voluptate.
+                Let's connect and build something great together. Fill out the form below to get started.
               </p>
             </div>
             
