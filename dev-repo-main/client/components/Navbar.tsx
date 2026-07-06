@@ -25,7 +25,7 @@ export default function Navbar({ scrolled, menuOpen, setMenuOpen }: NavbarProps)
           animate={{ opacity: 1, x: 0 }}
           className="font-shantell font-bold text-2xl md:text-3xl tracking-tight bg-gradient-to-r from-white to-white/60 bg-clip-text text-transparent"
         >
-          DevFolio<span className="text-purple-500">.</span>
+          DevFolio<span className="text-[#FFB000]">.</span>
         </motion.div>
 
         {/* Desktop Nav */}
@@ -43,12 +43,14 @@ export default function Navbar({ scrolled, menuOpen, setMenuOpen }: NavbarProps)
               <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-purple-500 transition-all duration-300 group-hover:w-full" />
             </MotionLink>
           ))}
+          
+          {/* BACKGROUND & TEXT LET'S TALK FIXED HERE */}
           <MotionLink
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4 }}
             to={CONTACT_LINK.path}
-            className="px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 text-white text-sm font-medium backdrop-blur-sm transition-all duration-300"
+            className="px-5 py-2.5 rounded-full bg-[#FFB000] hover:bg-[#E69E00] text-[#0D0D0D] text-sm font-semibold transition-all duration-300 shadow-md shadow-[#FFB000]/20"
           >
             Let's Talk
           </MotionLink>
