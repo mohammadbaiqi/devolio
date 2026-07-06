@@ -86,6 +86,9 @@ export default function AboutUs() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  // 1. Tambahan State untuk melacak ketikan user di kolom bawah
+  const [emailMessage, setEmailMessage] = useState("");
+
   useEffect(() => {
     if (!name) return;
 
@@ -116,6 +119,21 @@ export default function AboutUs() {
 
     fetchData();
   }, [name]);
+
+  // 2. Fungsi kustom untuk menangani redirect ke mailto saat tombol kuning diklik
+  const handleEmailSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!emailMessage.trim()) {
+      alert("Please type a message first!");
+      return;
+    }
+    
+    const targetEmail = "hello@example.com"; // <-- Ganti pakai email kelompok / email kamu pribadi
+    const subject = encodeURIComponent("Inquiry from DevFolio Website");
+    const body = encodeURIComponent(emailMessage);
+
+    window.location.href = `mailto:${targetEmail}?subject=${subject}&body=${body}`;
+  };
 
   // ── Loading State ───────────────────────────────────────────────────────────
   if (loading) {
@@ -311,20 +329,28 @@ export default function AboutUs() {
           {cta.heading}
         </motion.h2>
 
-        <motion.div
+        {/* 3. Diubah menjadi form dengan submit handler kustom */}
+        <motion.form
+          onSubmit={handleEmailSubmit}
           variants={fadeIn}
           className="w-full max-w-lg flex items-center gap-2 p-2 rounded-full bg-[#1C1C1E] border border-[#262629]"
         >
           <input
-            type="email"
+            type="text"
+            value={emailMessage}
+            onChange={(e) => setEmailMessage(e.target.value)}
             placeholder={cta.emailPlaceholder}
             className="flex-1 bg-transparent px-4 py-2 text-sm text-[#FFFFFF] placeholder:text-[#6B6B6E] outline-none"
           />
-          <button className="shrink-0 flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#FFB000] text-[#0D0D0D] text-sm font-medium hover:bg-[#E69E00] transition-colors">
+          {/* Tombol kuning otomatis bertindak sebagai submit trigger */}
+          <button 
+            type="submit"
+            className="shrink-0 flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#FFB000] text-[#0D0D0D] text-sm font-medium hover:bg-[#E69E00] transition-colors"
+          >
             {cta.submitLabel}
             <Send className="w-4 h-4" />
           </button>
-        </motion.div>
+        </motion.form>
 
         <motion.div
           variants={fadeIn}
