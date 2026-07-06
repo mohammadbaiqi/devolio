@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import { MotionNavLink } from "@/components/navigation";
-import { NAV_LINKS, ROUTES } from "@/config/navigation";
+import { NAV_LINKS, CONTACT_LINK } from "../lib/navigation";
+
+const MotionLink = motion(Link);
+const MOBILE_LINKS = [...NAV_LINKS, CONTACT_LINK];
 
 export default function MainContent() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,12 +21,12 @@ export default function MainContent() {
   }, []);
 
   return (
-    <div className="bg-[#0D0D0D] min-h-screen overflow-x-hidden text-white font-jakarta selection:bg-[#FFB000]/30">
+    <div className="bg-[#0A0A0A] min-h-screen overflow-x-hidden text-white font-jakarta selection:bg-purple-500/30">
       {/* Dynamic Background */}
       <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-[#FFB000]/8 blur-[120px]" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-[#CC8A00]/8 blur-[120px]" />
-        <div className="absolute top-[40%] left-[60%] w-[30%] h-[30%] rounded-full bg-[#FFB000]/5 blur-[100px]" />
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-purple-600/20 blur-[120px]" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-blue-600/20 blur-[120px]" />
+        <div className="absolute top-[40%] left-[60%] w-[30%] h-[30%] rounded-full bg-indigo-600/10 blur-[100px]" />
       </div>
 
       {/* HEADER */}
@@ -37,31 +39,21 @@ export default function MainContent() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-40 bg-[#0D0D0D]/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8"
+            className="fixed inset-0 z-40 bg-[#0A0A0A]/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8"
           >
-            {NAV_LINKS.map((link, i) => (
-              <MotionNavLink
+            {MOBILE_LINKS.map(({ label, path }, i) => (
+              <MotionLink
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
-                key={link.label}
-                to={link.to}
-                className="text-3xl font-shantell font-medium text-white hover:text-[#FFB000] transition-colors"
+                key={label}
+                to={path}
+                className="text-3xl font-shantell font-medium text-white hover:text-purple-400 transition-colors"
                 onClick={() => setMenuOpen(false)}
               >
-                {link.label}
-              </MotionNavLink>
+                {label}
+              </MotionLink>
             ))}
-            <MotionNavLink
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: NAV_LINKS.length * 0.1 }}
-              to={ROUTES.contact}
-              className="mt-4 inline-flex items-center justify-center rounded-full border border-[#FFB000]/30 bg-[#FFB000]/10 px-6 py-3 text-lg font-medium text-[#FFB000] hover:bg-[#FFB000]/20 transition-colors"
-              onClick={() => setMenuOpen(false)}
-            >
-              Contact
-            </MotionNavLink>
           </motion.div>
         )}
       </AnimatePresence>
