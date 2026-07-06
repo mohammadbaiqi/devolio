@@ -1,23 +1,25 @@
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import { MotionNavLink } from "@/components/navigation";
-import { ROUTES } from "@/config/navigation";
 import { buildPortfolioDetailPath } from "@/lib/portfolio";
 
 const projects = [
   {
+    id: "1",
     title: "Fintech Dashboard",
     category: "Web Application",
     image: "/images/dashboard_mockup_1782570304246.jpg",
     tags: ["React", "TypeScript", "TailwindCSS"],
   },
   {
+    id: "2",
     title: "FitTrack Pro",
     category: "Mobile UI Design",
     image: "/images/mobile_app_mockup_1782570315356.jpg",
     tags: ["React Native", "UI/UX", "Figma"],
   },
   {
+    id: "3",
     title: "Nexus Digitals",
     category: "Corporate Landing",
     image: "/images/corporate_site_mockup_1782570326008.jpg",
@@ -80,7 +82,7 @@ export default function Portofolio() {
               </div>
               
               <MotionNavLink
-                to={ROUTES.contact}
+                to={buildPortfolioDetailPath(project.title, project.id)}
                 className="inline-flex items-center gap-2 text-sm font-medium text-white/80 hover:text-white transition-colors"
               >
                 View Case Study <ChevronRight size={16} />
