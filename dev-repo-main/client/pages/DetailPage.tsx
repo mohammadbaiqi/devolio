@@ -1,6 +1,7 @@
 import { ExternalLink } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { usePortfolio } from "@/context/PortfolioContext";
 
 type ProjectInfo = {
   year?: string;
@@ -29,9 +30,10 @@ type BuildSection = {
   points: BuildPoint[];
 };
 
-
 export default function DetailPage() {
-  const { name, portoId } = useParams();
+  const { name } = usePortfolio();
+  const { portoId } = useParams<{ portoId: string }>();
+
   const [project, setProject] = useState<ProjectDetail | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -56,21 +58,21 @@ export default function DetailPage() {
 
   if (loading) {
     return (
-      <div className="px-6 py-24 text-[#A3A3A3] flex items-center gap-3">
-        <span className="w-2 h-2 rounded-full bg-[#FFB000] animate-pulse" />
-        Loading project...
+      <div className="px-6 py-24 text-[#FFFFFF] flex items-center gap-3">
+        <div className="w-6 h-6 rounded-full border-2 border-[#FFB000] border-t-transparent animate-spin" />
+        Loading project…
       </div>
     );
   }
 
   if (!project) {
-    return <div className="px-6 py-24 text-[#A3A3A3]">Project not found.</div>;
+    return <div className="px-6 py-24 text-[#FFFFFF]">Project not found.</div>;
   }
 
   return (
-    <div className="mx-auto max-w-6xl px-6 py-12 text-white md:px-12 md:py-24">
+    <div className="mx-auto max-w-6xl px-6 py-12 text-[#FFFFFF] md:px-12 md:py-24">
       {project.heroImage ? (
-        <img src={project.heroImage} alt={project.tagline} className="mb-8 h-[320px] w-full rounded-3xl object-cover border border-[#262629]" />
+        <img src={project.heroImage} alt={project.tagline} className="mb-8 h-[320px] w-full rounded-3xl object-cover" />
       ) : null}
 
       <div className="mb-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
@@ -79,14 +81,14 @@ export default function DetailPage() {
           href={project.liveDemoUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-full bg-[#FFB000] px-8 py-3 text-sm font-semibold text-[#0D0D0D] hover:bg-[#E69E00] transition-colors"
+          className="inline-flex items-center gap-2 rounded-lg bg-[#FFB000] px-8 py-3 text-sm font-medium text-[#0D0D0D] transition hover:bg-[#E69E00]"
         >
           Live Demo
-          <ExternalLink size={16} />
+          <ExternalLink size={18} className="h-4 w-4" />
         </a>
       </div>
 
-      <p className="mb-8 max-w-6xl text-lg text-[#A3A3A3]">{project.overview}</p>
+      <p className="justify mb-8 max-w-6xl text-lg text-[#A3A3A3]">{project.overview}</p>
 
       <div className="mb-8">
         <h2 className="mb-4 text-2xl font-semibold">Tech Stack</h2>
@@ -94,16 +96,10 @@ export default function DetailPage() {
           {project.techStack?.map((tech) => (
             <div
               key={tech.tech}
-              className="flex items-center gap-2 rounded-full border border-[#262629] bg-[#1C1C1E] px-4 py-2 hover:border-[#FFB000]/40 transition-colors"
+              className="flex items-center gap-2 rounded-full border border-[#262629] bg-[#1C1C1E] px-4 py-2"
             >
-              <img
-                src={tech.icon}
-                alt={tech.tech}
-                className="h-5 w-5 brightness-0 invert"
-              />
-              <span className="text-sm text-[#A3A3A3]">
-                {tech.tech}
-              </span>
+              <img src={tech.icon} alt={tech.tech} className="h-5 w-5 brightness-0 invert" />
+              <span className="text-sm text-[#A3A3A3]">{tech.tech}</span>
             </div>
           ))}
         </div>
@@ -111,19 +107,19 @@ export default function DetailPage() {
 
       <div className="mb-8 grid gap-4 rounded-3xl border border-[#262629] bg-[#1C1C1E] p-6 md:grid-cols-2">
         <div>
-          <p className="text-sm uppercase tracking-[0.2em] text-[#6B6B6E]">Year</p>
+          <p className="text-sm uppercase tracking-[0.2em] text-[#A3A3A3]">Year</p>
           <p className="mt-2 text-lg">{project.info?.year ?? "—"}</p>
         </div>
         <div>
-          <p className="text-sm uppercase tracking-[0.2em] text-[#6B6B6E]">Team</p>
+          <p className="text-sm uppercase tracking-[0.2em] text-[#A3A3A3]">Team</p>
           <p className="mt-2 text-lg">{project.info?.team ?? "—"}</p>
         </div>
         <div>
-          <p className="text-sm uppercase tracking-[0.2em] text-[#6B6B6E]">Role</p>
+          <p className="text-sm uppercase tracking-[0.2em] text-[#A3A3A3]">Role</p>
           <p className="mt-2 text-lg">{project.info?.role ?? "—"}</p>
         </div>
         <div>
-          <p className="text-sm uppercase tracking-[0.2em] text-[#6B6B6E]">Duration</p>
+          <p className="text-sm uppercase tracking-[0.2em] text-[#A3A3A3]">Duration</p>
           <p className="mt-2 text-lg">{project.info?.duration ?? "—"}</p>
         </div>
       </div>
@@ -133,11 +129,9 @@ export default function DetailPage() {
         {project.whatIBuilt?.map((section) => (
           <div
             key={section.title}
-            className="rounded-3xl border border-[#262629] bg-[#1C1C1E] p-6 hover:border-[#4A4A4D] transition-colors"
+            className="rounded-3xl border border-[#262629] bg-[#1C1C1E] p-6"
           >
-            <h3 className="mb-4 text-xl font-semibold text-[#FFB000]">
-              {section.title}
-            </h3>
+            <h3 className="mb-4 text-xl font-semibold">{section.title}</h3>
             <ul className="list-disc space-y-3 pl-6 text-[#A3A3A3]">
               {section.points.map((point, index) => (
                 <li key={index}>{point.description}</li>

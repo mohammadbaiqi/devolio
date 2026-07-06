@@ -1,7 +1,9 @@
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { MotionNavLink, NavLink } from "@/components/navigation";
-import { NAV_LINKS, ROUTES } from "@/config/navigation";
+import { buildPersonNavLinks, buildPersonRoutes } from "@/config/navigation";
+import { usePortfolio } from "@/context/PortfolioContext";
 
 interface NavbarProps {
   scrolled: boolean;
@@ -10,6 +12,16 @@ interface NavbarProps {
 }
 
 export default function Navbar({ scrolled, menuOpen, setMenuOpen }: NavbarProps) {
+  const { name } = usePortfolio();
+
+  const [navLinks, setNavLinks] = useState(buildPersonNavLinks(name));
+  const [personRoutes, setPersonRoutes] = useState(buildPersonRoutes(name));
+
+  useEffect(() => {
+    setNavLinks(buildPersonNavLinks(name));
+    setPersonRoutes(buildPersonRoutes(name));
+  }, [name]);
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-4 transition-all duration-300 border-b ${
@@ -22,16 +34,15 @@ export default function Navbar({ scrolled, menuOpen, setMenuOpen }: NavbarProps)
           animate={{ opacity: 1, x: 0 }}
         >
           <NavLink
-            to={ROUTES.home}
+            to={personRoutes.home}
             className="inline-flex items-center font-shantell font-bold text-2xl md:text-3xl tracking-tight bg-gradient-to-r from-white to-white/60 bg-clip-text text-transparent"
           >
             DevFolio<span className="text-[#FFB000]">.</span>
           </NavLink>
         </motion.div>
 
-        {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
-          {NAV_LINKS.map((link, i) => (
+          {navLinks.map((link, i) => (
             <MotionNavLink
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -48,14 +59,13 @@ export default function Navbar({ scrolled, menuOpen, setMenuOpen }: NavbarProps)
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4 }}
-            to={ROUTES.contact}
+            to={personRoutes.contact}
             className="px-5 py-2.5 rounded-full bg-[#FFB000] hover:bg-[#E69E00] text-[#0D0D0D] text-sm font-semibold transition-all duration-300"
           >
             Let's Talk
           </MotionNavLink>
         </nav>
 
-        {/* Mobile hamburger */}
         <button
           className="md:hidden p-2 text-white/80 hover:text-white transition-colors z-50 relative"
           onClick={() => setMenuOpen(!menuOpen)}

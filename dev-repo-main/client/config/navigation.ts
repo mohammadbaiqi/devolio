@@ -7,6 +7,24 @@ export const ROUTES = {
   termsOfService: "/terms-of-service",
 } as const;
 
+export function buildPersonRoutes(name: string) {
+  return {
+    home: `/${name}`,
+    about: `/${name}/about-us`,
+    portfolio: `/${name}/portfolio`,
+    contact: `/${name}/contact`,
+  } as const;
+}
+
+export function buildPersonNavLinks(name: string) {
+  const r = buildPersonRoutes(name);
+  return [
+    { label: "Home", to: r.home },
+    { label: "About", to: r.about },
+    { label: "Portfolio", to: r.portfolio },
+  ] as const;
+}
+
 export const NAV_LINKS = [
   { label: "Home", to: ROUTES.home },
   { label: "About", to: ROUTES.about },
