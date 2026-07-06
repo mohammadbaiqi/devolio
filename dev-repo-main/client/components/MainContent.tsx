@@ -38,7 +38,11 @@ export default function MainContent() {
           <div className="absolute top-[40%] left-[60%] w-[30%] h-[30%] rounded-full bg-[#FFB000]/5 blur-[100px]" />
         </div>
 
-        <Navbar scrolled={scrolled} menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+        <Navbar
+          scrolled={scrolled}
+          menuOpen={menuOpen}
+          setMenuOpen={setMenuOpen}
+        />
 
         <AnimatePresence>
           {menuOpen && (

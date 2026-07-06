@@ -11,7 +11,11 @@ interface NavbarProps {
   setMenuOpen: (open: boolean) => void;
 }
 
-export default function Navbar({ scrolled, menuOpen, setMenuOpen }: NavbarProps) {
+export default function Navbar({
+  scrolled,
+  menuOpen,
+  setMenuOpen,
+}: NavbarProps) {
   const { name } = usePortfolio();
 
   const [navLinks, setNavLinks] = useState(buildPersonNavLinks(name));
@@ -25,7 +29,9 @@ export default function Navbar({ scrolled, menuOpen, setMenuOpen }: NavbarProps)
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-4 transition-all duration-300 border-b ${
-        scrolled ? "bg-[#0D0D0D]/80 backdrop-blur-md border-[#262629] shadow-lg shadow-black/50" : "bg-transparent border-transparent"
+        scrolled
+          ? "bg-[#0A0A0A]/80 backdrop-blur-md border-white/10 shadow-lg shadow-black/50"
+          : "bg-transparent border-transparent"
       }`}
     >
       <div className="max-w-[1344px] mx-auto flex items-center justify-between">
@@ -49,12 +55,14 @@ export default function Navbar({ scrolled, menuOpen, setMenuOpen }: NavbarProps)
               transition={{ delay: i * 0.1 }}
               key={link.label}
               to={link.to}
-              className="text-sm font-medium text-[#A3A3A3] hover:text-white transition-colors relative group"
+              className="text-sm font-medium text-white/70 hover:text-white transition-colors relative group"
             >
               {link.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#FFB000] transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-purple-500 transition-all duration-300 group-hover:w-full" />
             </MotionNavLink>
           ))}
+
+          {/* BACKGROUND & TEXT LET'S TALK FIXED HERE */}
           <MotionNavLink
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
